@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng kí học viên</title>
+</head>
+<style>
+    h1 {
+        text-align: left;
+    }
+</style>
+<body>
+    <form>
+        <table style="width:30%">
+            <tr>
+                <th colspan="3"><h1>Đăng kí học viên</h1></th>
+            </tr>
+            <tr>
+                <td><p>Họ và tên</p></td>
+                <td><input type="text" name="fullname" size="20"/></td>
+            </tr>
+            <tr>
+                <td><p>Ngày sinh</p></td>
+                <td><input type="text" name="date" size="10"/></td>
+            </tr>
+            <tr>
+                <td><p>Giới tính</p></td>
+                <td>
+                    <input type="radio" name="rd"/>Nam
+                    <input type="radio" name="rd"/>Nữ
+                </td>
+            </tr>
+            <tr>
+                <td><p>Địa chỉ</p></td>
+                <td><textarea cols="20" rows="4"/></textarea></td>
+            </tr>
+            <tr>
+                <td><p>Lớp</p></td>
+                <td>
+                    <select>
+
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Email</p></td>
+                <td><input type="email" name="email" /></td>
+            </tr>
+            <tr>
+                <td><p>Điện thoại</p></td>
+                <td><input type="tel" name="telephone"/></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <table>
+                        <td><input type="submit" name="submit" value="Đăng ký"/></td>
+                        <td><input type="reset" name="reset" value="Nhập lại"/></td>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

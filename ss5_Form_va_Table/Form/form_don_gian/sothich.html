@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sở thích của bạn</title>
+</head>
+<style>
+    h1 {
+        background-color: #d61b06;
+    }
+    p {
+        color:blue;
+    }
+</style>
+<body>
+    <form>
+    <table style="width:50%">
+        <tr>
+            <th colspan="2"><h1>SỞ THÍCH CỦA BẠN</h1></th>
+        </tr>
+        <tr>
+            <td style="text-align: right"><p>Họ và Tên</p></td>
+            <td><input type="text" name="yourname" size="20"/></td>
+        </tr>
+        <tr>
+            <td style="text-align: right"><p>Email</p></td>
+            <td><input type="email" name="email" size="13"/></td>
+        </tr>
+        <tr>
+            <td style="text-align: right"><p>Sở thích</p></td>
+            <td>
+                <table>
+                        <tr>
+                            <td><input type="checkbox" name="hobby" value="thethao"/>Thể thao</td>
+                            <td><input type="checkbox" name="hobby" value="amnhac"/>Âm nhạc</td>
+                            <td><input type="checkbox" name="hobby" value="docsach"/>Đọc sách</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="hobby" value="luotweb"/>Lướt web</td>
+                            <td><input type="checkbox" name="hobby" value="choigame"/>Chơi Game</td>
+                            <td><input type="checkbox" name="hobby" value="dienanh"/>Điện ảnh</td>
+                        </tr>
+                        <tr>
+                            <td><input type="checkbox" name="hobby" value="dulich"/>Du lịch</td>
+                        </tr>
+                        <tr>
+                            <td><input type="submit" name="submitform" value="Gửi thông tin"/></td>
+                            <td><input type="reset" name="resetform" value="Nhập lại"/></td>
+                        </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
