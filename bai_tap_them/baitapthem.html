@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tinh diem trung binh</title>
+</head>
+<body>
+  <p>Toan</p>
+  <input type="number" name="toan" id="toan" value=""/>
+  <p>Van</p>
+  <input type="number" name="van" id="van" value=""/>
+  <p>Anh</p>
+  <input type="number" name="anh" id="anh" value=""/><br/>
+  <button type="button" onclick="diem_trung_binh();"><p id="tong">Diem trung binh</p></button><br/>
+  
+</body>
+</html>
+<script>
+  function diem_trung_binh() {
+    let diem1 = parseFloat(document.getElementById('toan').value);
+    let diem2 = parseFloat(document.getElementById('van').value);
+    let diem3 = parseFloat(document.getElementById('anh').value);
+
+    let diem4=document.getElementById('tong').innerHTML = "Diem Trung Binh:" + (diem1+diem2+diem3)/3
+
+  }
+</script>
