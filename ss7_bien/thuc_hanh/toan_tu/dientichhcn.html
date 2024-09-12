@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dien tich hinh chu nhat</title>
+</head>
+<body>
+
+  <script>
+      // Khai báo các biến
+      let inputWidth;
+      let inputHeight;
+      // Sử dụng hàm prompt để nhập dữ liệu từ người dùng
+      inputWidth = prompt('Vui long nhap chieu dai')
+      inputHeight = prompt('Vui long nhap chieu rong')
+      // Sử dụng hàm parseInt() để chuyển kiểu dữ liệu từ chuỗi sang số nguyên
+      let width = parseInt(inputWidth);
+      let height = parseInt(inputHeight);
+      let area = width * height
+      if (width>height) {
+
+          document.write("The are is: " + area);
+      }
+      else {
+          alert('Vui long nhap lai')
+      }
+  </script>
+</body>
+</html>

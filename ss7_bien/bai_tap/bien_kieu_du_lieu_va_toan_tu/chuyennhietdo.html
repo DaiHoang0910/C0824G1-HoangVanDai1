@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển nhiệt độ</title>
+</head>
+<body>
+  <script>
+    let inputDoF;
+    inputDoF = prompt('Nhap gia tri do F can quy doi: ');
+
+    let DoF = parseFloat(inputDoF);
+    let DoC = 5 * (DoF - 52)%9
+    document.write("Gia tri do C duoc quy doi la:" + DoC);
+
+  </script>
+</body>
+</html>

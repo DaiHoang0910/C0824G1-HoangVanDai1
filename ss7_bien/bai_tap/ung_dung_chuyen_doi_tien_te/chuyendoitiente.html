@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyen doi tien te</title>
+</head>
+<body>
+    <form>
+        <table style="width:50%">
+            <tr>
+                <td style="text-align: center">Amount</td>
+                <td>From Currency</td>
+                <td>To Currency</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="text-align: center"><input type="number" name="sotien" id="sotien" value=""/></td>
+                <td>
+                    <select id="From">
+                        <option value="vnd">VND</option>
+                        <option value="usd">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="To">
+                        <option value="vnd">VND</option>
+                        <option value="usd">USD</option>
+                    </select>
+                </td>
+                <td>
+                    <button type="button" onclick="chuyen_doi_tien_te();" style="background-color: blue; color: white">Convert</button>
+                </td>
+            </tr>
+        </table>
+        <p id="result" style="color: blue">Result</p>
+        <input type="reset"/>
+    </form>
+    <script>
+        function chuyen_doi_tien_te() {
+            let SoTien = parseFloat(document.getElementById('sotien').value);
+            let From = document.getElementById('From').value;
+            let To = document.getElementById('To').value;
+            let Result;
+
+            if (From == "usd" && To == "vnd" ) {
+                Result = "Result = " + SoTien * 24.480 +" vnd"
+            }
+            else if (From == "vnd" && To == "usd") {
+                Result = "Result = " + SoTien / 24.480 +" $"
+            }
+            else if (From == "vnd" && To == "vnd") {
+                Result = "Result = " + SoTien +" vnd"
+            }
+            else {
+                Result = "Result = " + SoTien +" $"
+            }
+            document.getElementById('result').innerHTML = Result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tinh diem trung binh</title>
+</head>
+<body>
+<form>
+  <p>Chieu Dai</p>
+  <input type="number" name="chieudai" id="chieudai" value=""/>
+  <p>Chieu Rong</p>
+  <input type="number" name="chieurong" id="chieurong" value=""/>
+
+  <button type="button" onclick="dien_tich();"><p id="dientich">Dien Tich Hinh Chu Nhat</p></button><br/>
+
+  <input type="reset" value="Nhập lại"/>
+</form>
+</body>
+</html>
+<script>
+  function dien_tich() {
+    let dai = parseFloat(document.getElementById('chieudai').value);
+    let rong = parseFloat(document.getElementById('chieurong').value);
+    if (dai>rong) {
+
+      let diem4 = document.getElementById('dientich').innerHTML = "Dien tich hinh chu nhat:" + (dai * rong)
+    }
+    else {
+      alert('Vui long nhap lai')
+    }
+  }
+</script>

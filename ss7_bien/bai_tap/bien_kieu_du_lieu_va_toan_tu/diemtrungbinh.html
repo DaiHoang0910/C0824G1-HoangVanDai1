@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diem trung binh</title>
+</head>
+<body>
+    <script>
+        let inputDiemVatLy;
+        let inputDiemHoaHoc;
+        let inputDiemSinhHoc;
+
+        inputDiemVatLy = prompt('Nhap diem Vat Ly');
+        inputDiemHoaHoc = prompt('Nhap diem Hoa Hoc');
+        inputDiemSinhHoc = prompt('Nhap diem Sinh Hoc');
+
+        let DiemVatLy = parseFloat(inputDiemVatLy);
+        let DiemHoaHoc = parseFloat(inputDiemHoaHoc);
+        let DiemSinhHoc = parseFloat(inputDiemSinhHoc);
+        let DiemTrungBinh = (DiemVatLy + DiemHoaHoc + DiemSinhHoc) / 3;
+        let Tong = (DiemVatLy + DiemHoaHoc + DiemSinhHoc);
+
+        document.write('Diem Trung Binh: ' + DiemTrungBinh);
+        document.write('Tong cua cac diem: ' + Tong)
+    </script>
+</body>
+</html>

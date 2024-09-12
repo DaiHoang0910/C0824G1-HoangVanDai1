@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>May Tinh</title>
+</head>
+<body>
+    <form>
+        <h2>Caculator</h2>
+        <table>
+            <th><input type="number" id="number1" name="number1" value=""/></th>
+            <th><input type="number" id="number2" name="number2" value=""/></th>
+        </table>
+        <table>
+            <th>
+                <button type="button" onclick="Addition();">
+                    Addition(+)
+                </button>
+            </th><th>
+            <button type="button" onclick="Subtraction();">
+                Subtraction(-)
+            </button>
+        </th><th>
+            <button type="button" onclick="Multiplication();">
+                Multiplication(X)
+            </button>
+        </th><th>
+            <button type="button" onclick="Division();">
+                Division(/)
+            </button>
+        </th>
+        </table>
+        <p id="result">Result</p>
+    </form>
+    <script>
+        function Addition() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let so2 = parseFloat(document.getElementById('number2').value);
+            let Result = so1 + so2;
+
+            document.getElementById('result').innerHTML = Result;
+        }
+        function Subtraction() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let so2 = parseFloat(document.getElementById('number2').value);
+            let Result = so1 - so2;
+
+            document.getElementById('result').innerHTML = Result;
+        }function Multiplication() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let so2 = parseFloat(document.getElementById('number2').value);
+            let Result = so1 * so2;
+
+                document.getElementById('result').innerHTML = Result;
+        }function Division() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let so2 = parseFloat(document.getElementById('number2').value);
+            let Result = so1 / so2;
+
+            document.getElementById('result').innerHTML = Result;
+        }
+    </script>
+</body>
+</html>
