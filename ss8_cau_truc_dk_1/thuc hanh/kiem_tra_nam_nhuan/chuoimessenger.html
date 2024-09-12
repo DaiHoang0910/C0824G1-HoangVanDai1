@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuoi Message</title>
+</head>
+<body>
+  <script>
+    let Login = prompt('Nhap gia tri cho chuoi Message :');
+    let message;
+
+    if (Login == 'Employee') {
+      message = 'Hello';
+    }
+    else if (Login == 'Director') {
+      message = 'Greetings';
+    }
+    else if (Login == '') {
+      message = 'NoLogin';
+    }
+    else {
+      message = 'NoLogin';
+    }
+    alert(message);
+  </script>
+</body>
+</html>

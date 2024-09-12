@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xet Diem</title>
+</head>
+<body>
+    <input type="number" id="Diem" name="diem" value=""/>
+    <button type="button" onclick="Tong_Ket();">Enter</button>
+    <p id="Result">Tong Ket:</p>
+
+    <script>
+        function Tong_Ket() {
+            let inputDiem = parseFloat(document.getElementById('Diem').value);
+            let ReSult;
+
+            if (inputDiem >= 75) {
+                ReSult = 'pass module';
+            } else {
+                ReSult = 'no pass';
+            }
+            document.getElementById('Result').innerHTML = ReSult;
+        }
+    </script>
+</body>
+</html>
