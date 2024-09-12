@@ -14,7 +14,7 @@
                 <td></td>
             </tr>
             <tr>
-                <td style="text-align: center"><input type="number" name="sotien" id="sotien" value=""/></td>
+                <td style="text-align: center"><input type="number" name="sotien" id="Sotien" value=""/></td>
                 <td>
                     <select id="From">
                         <option value="vnd">VND</option>
@@ -28,16 +28,16 @@
                     </select>
                 </td>
                 <td>
-                    <button type="button" onclick="chuyen_doi_tien_te();" style="background-color: blue; color: white">Convert</button>
+                    <button type="button" onclick="Chuyen_Doi_Tien_Te();" style="background-color: blue; color: white">Convert</button>
                 </td>
             </tr>
         </table>
-        <p id="result" style="color: blue">Result</p>
+        <p id="Result" style="color: blue">Result</p>
         <input type="reset"/>
     </form>
     <script>
-        function chuyen_doi_tien_te() {
-            let SoTien = parseFloat(document.getElementById('sotien').value);
+        function Chuyen_Doi_Tien_Te() {
+            let SoTien = parseFloat(document.getElementById('Sotien').value);
             let From = document.getElementById('From').value;
             let To = document.getElementById('To').value;
             let Result;
@@ -54,7 +54,7 @@
             else {
                 Result = "Result = " + SoTien +" $"
             }
-            document.getElementById('result').innerHTML = Result;
+            document.getElementById('Result').innerHTML = Result;
         }
     </script>
 </body>
