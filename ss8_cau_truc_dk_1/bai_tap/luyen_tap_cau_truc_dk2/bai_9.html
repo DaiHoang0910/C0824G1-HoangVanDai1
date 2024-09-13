@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra canh cua tam giac</title>
+</head>
+<body>
+  <form>
+    Nhap vao so a: <input type="number" id="numberA" value=""/><br/><br>
+    Nhap vao so b: <input type="number" id="numberB" value=""/><br/><br>
+    Nhap vao so c: <input type="number" id="numberC" value=""/><br/><br>
+    <button type="button" onclick="kiemTra()">Kiem Tra:</button>
+    <p id="result"></p>
+    <input type="reset" value="Nhap Lai"/>
+  </form>
+  <script>
+    function kiemTra(){
+      let a = parseFloat(document.getElementById('numberA').value);
+      let b = parseFloat(document.getElementById('numberB').value);
+      let c = parseFloat(document.getElementById('numberC').value);
+      let result;
+
+      if (a > 0 && b > 0 && c > 0 && (a + b) > c && (b+c) > a && (a+c) > b){
+        result = "3 so tren la 3 dinh cua tam giac"
+      }
+      else {
+        result = " 3 so tren khong thuoc tham giac"
+      }
+      document.getElementById('result').innerHTML=result;
+    }
+  </script>
+</body>
+</html>

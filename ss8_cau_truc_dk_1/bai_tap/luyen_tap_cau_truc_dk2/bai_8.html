@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xac thuc tuoi</title>
+</head>
+<body>
+  <form>
+    Nhap so: <input type="number" id="number" value=""/><br/><br/>
+    <button type="button" onclick="check()">Kiem Tra</button>
+    <p id="result"></p>
+    <input type="reset" value="Nhap Lai"/>
+  </form>
+  <script>
+    function check(){
+      let a = parseFloat(document.getElementById('number').value);
+      let result;
+      if (a > 0 && a < 120){
+        result = "So duoc nhap vao la tuoi cua 1 nguoi"
+      }
+      else{
+        result = "Khong phai so tuoi"
+      }
+      document.getElementById('result').innerHTML=result;
+    }
+  </script>
+</body>
+</html>

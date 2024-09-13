@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh thue thu nhap ca nhan</title>
+</head>
+<style>
+
+    td {
+        text-align: center;
+    }
+</style>
+<body>
+    <form>
+        <table border="1" style="width: 50%">
+            <tr>
+                <th>Bậc thuế</th>
+                <th>Phần thu nhập tính thuế/năm<br/>(triệu đồng)</th>
+                <th>Phần thu nhập tính thuế/tháng<br/>(triệu đồng)</th>
+                <th>Thuế suất<br/>(%)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Đến 60</td>
+                <td>Đến 5</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trên 60 đến 120</td>
+                <td>Trên 5 đến 10</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Trên 120 đến 216</td>
+                <td>Trên 10 đến 18</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Trên 216 đến 384</td>
+                <td>Trên 18 đến 32</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Trên 384 đến 624</td>
+                <td>Trên 32 đến 52</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Trên 624 đến 960</td>
+                <td>Trên 52 đến 80</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Trên 960</td>
+                <td>Trên 80</td>
+                <td>35</td>
+            </tr>
+        </table><br/><br/>
+        Nhập thu thập cá nhân thu thập được(năm): <input type="number" id="thuNhap" value=""/> Trieu<br/><br>
+        <button type="button" onclick="tinh()">Tính thuế thu nhập cá nhân(năm): </button>
+        <p id="result"></p>
+    </form>
+    <script>
+        function tinh() {
+            let thuNhap = parseFloat(document.getElementById('thuNhap').value);
+            let result;
+
+            if (thuNhap > 0 && thuNhap < 60) {
+                result = "Thuế thu nhập cá nhân(năm): " + (thuNhap * 5 / 100);
+            } else if (thuNhap < 120) {
+                result = "Thuế thu nhập cá nhân(năm): " + (thuNhap * 10 / 100);
+            } else if (thuNhap < 216) {
+                result = "Thuế thu nhập cá nhân(năm): " + (thuNhap * 15 / 100);
+            } else if (thuNhap < 384) {
+                result = "Thuế thu nhập cá nhân(năm): " + (thuNhap * 20 / 100);
+            } else if (thuNhap < 624) {
+                result = "Thuế thu nhập cá nhân(năm): " + (thuNhap * 25 / 100);
+            } else if (thuNhap < 960) {
+                result = "Thuế thu nhập cá nhân(năm): " + (thuNhap * 30 / 100);
+            } else {
+                result = "Thuế thu nhập cá nhân(năm): " + (thuNhap * 35 / 100);
+            }
+            document.getElementById('result').innerHTML=result;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh dien tich hinh vuong</title>
+</head>
+<body>
+  <form>
+    Nhap canh hinh vuong a: <input type="number" id="canhA" value=""/><br/><br/>
+    <button type="button" onclick="tinh();">Tinh</button>
+    <p id="result"></p>
+    <input type="reset" value="Nhap Lai"/>
+  </form>
+  <script>
+    function tinh(){
+      let a = parseFloat(document.getElementById('canhA').value);
+      let S = a * a;
+      let result = "Dien tich hinh vuong la: "+S;
+      document.getElementById('result').innerHTML=result;
+    }
+  </script>
+</body>
+</html>

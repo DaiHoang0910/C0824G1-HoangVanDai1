@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh gia dien</title>
+</head>
+<body>
+  <form>
+    Nhap so luong dien tieu thu trong thang: <input type="number" value=""/>= Tong cua cac muc su dung.<br/><br/>
+    <table style="width:50%">
+      <tr>
+        <td></td>
+        <th style="text-align: left">MỨC SỬ DỤNG(kWh)</th>
+        <th style="text-align: left">ĐƠN GIÁ (đồng/kWh)</th>
+        <th style="text-align: left">SẢN LƯỢNG(kWh)</th>
+      </tr>
+      <tr>
+        <td>Bậc Thang 1</td>
+        <td> 0 - 50 </td>
+        <td>1806</td>
+        <td><input type="number" id="dien1" value="0"/></td>
+      </tr>
+      <tr>
+        <td>Bậc Thang 2</td>
+        <td> 51 - 100 </td>
+        <td>1866</td>
+        <td><input type="number" id="dien2" value="0"/></td>
+      </tr>
+      <tr>
+        <td>Bậc Thang 3</td>
+        <td> 101 - 200 </td>
+        <td>2167</td>
+        <td><input type="number" id="dien3" value="0"/></td>
+      </tr>
+      <tr>
+        <td>Bậc Thang 4</td>
+        <td> 201 - 300 </td>
+        <td>2729</td>
+        <td><input type="number" id="dien4" value="0"/></td>
+      </tr>
+      <tr>
+        <td>Bậc Thang 5</td>
+        <td> 301 - 400 </td>
+        <td>3050</td>
+        <td><input type="number" id="dien5" value="0"/></td>
+      </tr>
+      <tr>
+        <td>Bậc Thang 6</td>
+        <td> >400 </td>
+        <td>3151</td>
+        <td><input type="number" id="dien6" value="0"/></td>
+      </tr>
+    </table><br/><br/>
+    <button type="button" onclick="tinh()">Thanh Tien:</button>
+    <p id="result"></p>
+  </form>
+  <script>
+    function tinh(){
+      let dien1 = parseFloat(document.getElementById('dien1').value);
+      let dien2 = parseFloat(document.getElementById('dien2').value);
+      let dien3 = parseFloat(document.getElementById('dien3').value);
+      let dien4 = parseFloat(document.getElementById('dien4').value);
+      let dien5 = parseFloat(document.getElementById('dien5').value);
+      let dien6 = parseFloat(document.getElementById('dien6').value);
+      let x = ((dien1*1806)+(dien2*1866)+(dien3*2167)+(dien4*2729)+(dien5*3050)+(dien6*3151))*108/100;
+      let result;
+
+      result = "Tien dien thang nay la: "+ x +" vnd"
+      document.getElementById('result').innerHTML=result;
+    }
+  </script>
+</body>
+</html>

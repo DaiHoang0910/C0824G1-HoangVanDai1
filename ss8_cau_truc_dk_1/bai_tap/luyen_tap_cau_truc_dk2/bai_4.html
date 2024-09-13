@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh dien tich hinh chu nhat</title>
+</head>
+<body>
+  <form>
+    Nhap chieu dai a: <input type="number" id="chieuDai" value=""/><br/><br/>
+    Nhap chieu rong b: <input type="number" id="chieuRong" value=""/><br/><br/>
+    <button type="button" onclick="tinh();">Tinh</button>
+    <p id="result"></p>
+    <input type="reset" value="Nhap Lai"/>
+  </form>
+  <script>
+    function tinh(){
+      let a = parseFloat(document.getElementById('chieuDai').value);
+      let b = parseFloat(document.getElementById('chieuRong').value);
+      let S;
+      let result;
+
+      if ( a > b){
+        S = a * b;
+        result = "Dien tich hinh chu nhat la: "+S;
+      }
+      else{
+        result = "Vui long nhap lai - chieu dai > chieu rong";
+      }
+
+      document.getElementById('result').innerHTML=result;
+    }
+  </script>
+</body>
+</html>
