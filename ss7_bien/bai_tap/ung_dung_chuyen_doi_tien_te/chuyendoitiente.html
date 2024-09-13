@@ -14,47 +14,47 @@
                 <td></td>
             </tr>
             <tr>
-                <td style="text-align: center"><input type="number" name="sotien" id="Sotien" value=""/></td>
+                <td style="text-align: center"><input type="number" name="soTien" id="soTien" value=""/></td>
                 <td>
-                    <select id="From">
+                    <select id="from">
                         <option value="vnd">VND</option>
                         <option value="usd">USD</option>
                     </select>
                 </td>
                 <td>
-                    <select id="To">
+                    <select id="to">
                         <option value="vnd">VND</option>
                         <option value="usd">USD</option>
                     </select>
                 </td>
                 <td>
-                    <button type="button" onclick="Chuyen_Doi_Tien_Te();" style="background-color: blue; color: white">Convert</button>
+                    <button type="button" onclick="chuyenDoiTienTe();" style="background-color: blue; color: white">Convert</button>
                 </td>
             </tr>
         </table>
-        <p id="Result" style="color: blue">Result</p>
+        <p id="result" style="color: blue">Result</p>
         <input type="reset"/>
     </form>
     <script>
-        function Chuyen_Doi_Tien_Te() {
-            let SoTien = parseFloat(document.getElementById('Sotien').value);
-            let From = document.getElementById('From').value;
-            let To = document.getElementById('To').value;
-            let Result;
+        function chuyenDoiTienTe() {
+            let soTien = parseFloat(document.getElementById('soTien').value);
+            let from = document.getElementById('from').value;
+            let to = document.getElementById('to').value;
+            let result;
 
-            if (From == "usd" && To == "vnd" ) {
-                Result = "Result = " + SoTien * 24.480 +" vnd"
+            if (from == "usd" && to == "vnd" ) {
+                result = "Result = " + soTien * 24.480 +" vnd"
             }
-            else if (From == "vnd" && To == "usd") {
-                Result = "Result = " + SoTien / 24.480 +" $"
+            else if (from == "vnd" && to == "usd") {
+                result = "Result = " + soTien / 24.480 +" $"
             }
-            else if (From == "vnd" && To == "vnd") {
-                Result = "Result = " + SoTien +" vnd"
+            else if (from == "vnd" && to == "vnd") {
+                result = "Result = " + soTien +" vnd"
             }
             else {
-                Result = "Result = " + SoTien +" $"
+                result = "Result = " + soTien +" $"
             }
-            document.getElementById('Result').innerHTML = Result;
+            document.getElementById('result').innerHTML = result;
         }
     </script>
 </body>

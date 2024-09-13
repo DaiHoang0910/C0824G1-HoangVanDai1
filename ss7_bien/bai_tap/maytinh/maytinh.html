@@ -8,63 +8,63 @@
     <form>
         <h2>Caculator</h2>
         <table>
-            <th><input type="number" id="Number1" name="number1" value=""/></th>
-            <th><input type="number" id="Number2" name="number2" value=""/></th>
+            <th><input type="number" id="number1" name="number1" value=""/></th>
+            <th><input type="number" id="number2" name="number2" value=""/></th>
         </table>
         <table>
             <th>
-                <button type="button" onclick="Addition();">
+                <button type="button" onclick="addition();">
                     Addition(+)
                 </button>
             </th><th>
-            <button type="button" onclick="Subtraction();">
+            <button type="button" onclick="subtraction();">
                 Subtraction(-)
             </button>
         </th><th>
-            <button type="button" onclick="Multiplication();">
+            <button type="button" onclick="multiplication();">
                 Multiplication(X)
             </button>
         </th><th>
-            <button type="button" onclick="Division();">
+            <button type="button" onclick="division();">
                 Division(/)
             </button>
         </th>
         </table>
-        <p id="Result">Result</p>
+        <p id="result">result</p>
     </form>
     <script>
-        function Addition() {
-            let So1 = parseFloat(document.getElementById('Number1').value);
-            let So2 = parseFloat(document.getElementById('Number2').value);
-            let Result = So1 + So2;
+        function addition() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let so2 = parseFloat(document.getElementById('number2').value);
+            let result = so1 + so2;
 
-            document.getElementById('Result').innerHTML = Result;
+            document.getElementById('result').innerHTML = result;
         }
-        function Subtraction() {
-            let So1 = parseFloat(document.getElementById('Number1').value);
-            let So2 = parseFloat(document.getElementById('Number2').value);
-            let Result = So1 - So2;
+        function subtraction() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let so2 = parseFloat(document.getElementById('number2').value);
+            let result = so1- so2;
 
-            document.getElementById('Result').innerHTML = Result;
-        }function Multiplication() {
-            let So1 = parseFloat(document.getElementById('Number1').value);
-            let So2 = parseFloat(document.getElementById('Number2').value);
-            let Result = So1 * So2;
+            document.getElementById('result').innerHTML = result;
+        }function multiplication() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let So2 = parseFloat(document.getElementById('number2').value);
+            let result = so1 * So2;
 
-                document.getElementById('Result').innerHTML = Result;
-        }function Division() {
-            let So1 = parseFloat(document.getElementById('Number1').value);
-            let So2 = parseFloat(document.getElementById('Number2').value);
-            let Result;
+                document.getElementById('result').innerHTML = result;
+        }function division() {
+            let so1 = parseFloat(document.getElementById('number1').value);
+            let so2 = parseFloat(document.getElementById('number2').value);
+            let result;
 
-            if (So2 == 0) {
+            if (so2 == 0) {
                 alert('Vui long nhap lai so mau khac 0');
             }
             else {
-                Result = So1 / So2;
+                result = so1 / so2;
             }
 
-            document.getElementById('Result').innerHTML = Result;
+            document.getElementById('result').innerHTML = result;
         }
     </script>
 </body>
