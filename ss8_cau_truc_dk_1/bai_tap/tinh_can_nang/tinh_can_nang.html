@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh can nang co the</title>
+</head>
+<body>
+    Nhap Can Nang (kg) :<input type = number id="weight" name="weight" value=""/><br/><br/>
+    Nhap Chieu Cao (m) :<input type = number id="height" name="height" value=""/><br/><br/>
+    <button type="button" onclick="check();">Check</button>
+    <p id="result"></p>
+    <script>
+        function check(){
+            let weight = parseFloat(document.getElementById('weight').value);
+            let height = parseFloat(document.getElementById('height').value);
+            let bmi = weight / (height ^ 2);
+            let result;
+
+            if ( bmi < 18) {
+                result ="Chi so BMI cua ban la: " +bmi +"- UnderWeight - Thiếu Cân"
+            }
+            else if (bmi < 25.0){
+                result ="Chi so BMI cua ban la: " +bmi + "- Normal - Cân Đối"
+            }
+            else if (bmi < 30.0){
+                result ="Chi so BMI cua ban la: " +bmi + "- OverWeight - Thừa Cân"
+            }
+            else {
+                result ="Chi so BMI cua ban la: " +bmi + "- Obese - Béo "
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

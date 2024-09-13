@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh so ngay trong 1 thang</title>
+</head>
+<body>
+    <form>
+      <h2>Kiem tra so ngay trong thang</h2>
+      Nhap thang: <input type="number" id="thang" value=""/>
+      <button type="button" onclick="check();">Kiem Tra</button>
+      <p id="result"></p>
+      <input type="reset" value="Nhap Lai"/>
+    </form>
+  <script>
+      function check() {
+          let thang = parseFloat(document.getElementById('thang').value);
+          let result;
+
+          switch (thang) {
+              case 1:
+              case 3:
+              case 5:
+              case 7:
+              case 8:
+              case 10:
+              case 12:
+                  result = "Thang " + thang + " co 31 ngay";
+                  break;
+              case 2:
+                  result = "Thang 2 co 28-29 ngay";
+                  break;
+              case 4:
+              case 6:
+              case 9:
+              case 12:
+                  result = "Thang " + thang + " co 30 ngay";
+                  break;
+              default:
+                  result = "Vui long nhap lai"
+          }
+          document.getElementById('result').innerHTML = result;
+      }
+  </script>
+</body>
+</html>
