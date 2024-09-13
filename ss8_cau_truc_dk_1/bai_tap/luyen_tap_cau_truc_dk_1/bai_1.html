@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiem tra a chia het cho b</title>
+</head>
+<body>
+    <form>
+        Nhap so a: <input type="number" id="numberA" value=""/><br/><br/>
+        Nhap so b: <input type="number" id="numberB" value=""/><br/><br/>
+        <button type="button" onclick="check();">Kiem Tra</button>
+        <p id="result"></p>
+        <input type="reset" value="Nhap Lai">
+    </form>
+    <script>
+        function check() {
+            let a = parseFloat(document.getElementById('numberA').value);
+            let b = parseFloat(document.getElementById('numberB').value);
+            let result;
+
+            if (a % b === 0) {
+                result = "a chia het cho b";
+            }
+            else {
+                result = "a khong chia het cho b"
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</body>
+</html>

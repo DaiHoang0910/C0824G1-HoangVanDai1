@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xep hang hoc luc hoc sinh</title>
+</head>
+<body>
+  <form>
+    Nhap diem bai kiem tra: <input type="number" id="kiemTra" value=""/><br/><br/>
+    Nhap diem thi giua ki: <input type="number" id="giuaKi" value=""/><br/><br/>
+    Nhap diem thi cuoi ky: <input type="number" id="cuoiKi" value=""/><br/><br/>
+    <button type="button" onclick="check();">Kiem Tra</button>
+    <p id="result"></p>
+    <input type="reset" value="Nhap Lai"/>
+  </form>
+  <script>
+    function check() {
+      let kiemTra = parseFloat(document.getElementById('kiemTra').value);
+      let giuaKi = parseFloat(document.getElementById('giuaKi').value);
+      let cuoiKi = parseFloat(document.getElementById('cuoiKi').value);
+      let dtb = (kiemTra + giuaKi + cuoiKi)/3
+      let result;
+
+      if (dtb > 8) {
+        result = "Xep loai hoc luc: Gioi";
+      }
+      else if (dtb > 6.5) {
+        result = "Xep loai hoc luc: Kha";
+      }
+      else {
+        result = "Xep loai hoc luc: Trung Binh";
+      }
+      document.getElementById('result').innerHTML = result;
+    }
+  </script>
+</body>
+</html>

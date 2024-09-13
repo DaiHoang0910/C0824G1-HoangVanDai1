@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tim so lon nhat trong 3 so</title>
+</head>
+<body>
+  <form>
+    Nhap so a: <input type="number" id="numberA" value=""><br/><br/>
+    Nhap so b: <input type="number" id="numberB" value=""><br/><br/>
+    Nhap so c: <input type="number" id="numberC" value=""><br/><br/>
+    <button type="button" onclick="check();">Kiem Tra</button>
+    <p id="result"></p>
+    <input type="reset" value="Nhap Lai"/>
+  </form>
+  <script>
+    function check(){
+      let a = parseFloat(document.getElementById('numberA').value);
+      let b = parseFloat(document.getElementById('numberB').value);
+      let c = parseFloat(document.getElementById('numberC').value);
+      let result;
+
+      if ( b > a && b > c) {
+        result = "b la so lon nhat";
+      }
+      else if (c > a && c > b){
+        result = "c la so lon nhat";
+      }
+      else{
+        result = "a la so lon nhat";
+      }
+      document.getElementById('result').innerHTML = result;
+    }
+  </script>
+</body>
+</html>

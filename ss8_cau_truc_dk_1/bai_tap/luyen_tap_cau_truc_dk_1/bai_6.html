@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh hoa hong nhan duoc theo doanh so ban hang</title>
+</head>
+<body>
+    <form>
+        Nhap doanh so ban hang thang nay: <input type="number" id="doanhThu" value=""/><br/><br/>
+        <button type="button" onclick="hoaHong();">Xuat hoa hong: </button>
+        <p id="result"></p>
+        <input type="reset" value="Nhap Lai"/>
+    </form>
+    <script>
+        function hoaHong(){
+            let doanhThu = parseFloat(document.getElementById('doanhThu').value);
+            let hoaHong = doanhThu * 5/100;
+            let result = "Doanh thu thang nay la: "+doanhThu+ " Hoa hong(5% doanh thu) tuong ung la: "+hoaHong;
+
+            document.getElementById('result').innerHTML=result;
+
+        }
+    </script>
+</body>
+</html>

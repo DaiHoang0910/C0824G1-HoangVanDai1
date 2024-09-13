@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xet dieu kien vao lop 10</title>
+</head>
+<body>
+  <form>
+    Nhap tuoi: <input type="number" id="tuoi" value=""/><br/><br/>
+    <button type="button" onclick="check();">Kiem Tra</button>
+    <p id="result"></p>
+    <input type="reset" value="Nhap Lai"/>
+  </form>
+  <script>
+    function check() {
+      let tuoi = parseFloat(document.getElementById('tuoi').value);
+
+      if (tuoi >= 16 && tuoi <20){
+        result = "Hoc sinh du tuoi vao lop 10";
+      }
+      else {
+        result = "Hoc sinh khong du tuoi vao 10";
+      }
+      document.getElementById('result').innerHTML = result;
+    }
+  </script>
+</body>
+</html>
