@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuong trinh tinh lai</title>
+</head>
+<body>
+  Nhap so tien ban dau vay (trieu): <input type="number" id="tien" value=""/><br/><br/>
+  Nhap so thoi gian cho vay(thang) : <input type="number" id="time" value=""/><br/><br/>
+  Nhap so lai suat hang thang(%) : <input type="number" id="lai" value=""/><br/>
+  <button type="button" onclick="tinh()">Tinh lai ngan hang</button>
+  <p id="result"></p>
+  <script>
+    function tinh(){
+      let tien = parseFloat(document.getElementById('tien').value);
+      let time = parseFloat(document.getElementById('time').value);
+      let lai = parseFloat(document.getElementById('lai').value);
+      let a = Math.pow((1 + lai/100), time);
+      let result = tien*a- tien + " (trieu) vnd";
+      document.getElementById('result').innerHTML=result;
+    }
+  </script>
+</body>
+</html>

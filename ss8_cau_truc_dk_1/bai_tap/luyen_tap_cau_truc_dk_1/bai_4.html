@@ -21,13 +21,22 @@
       let result;
 
       if ( b > a && b > c) {
-        result = "b la so lon nhat";
+        result = b +" la so lon nhat";
+      }
+      else if (b === a && b > c){
+        result = b +" la so lon nhat";
+      }
+      else if (b > a && b === c){
+        result = b +" la so lon nhat";
+      }
+      else if (b === a && b === c){
+        result = b +" la so lon nhat";
       }
       else if (c > a && c > b){
-        result = "c la so lon nhat";
+        result = c +" la so lon nhat";
       }
       else{
-        result = "a la so lon nhat";
+        result = a +" la so lon nhat";
       }
       document.getElementById('result').innerHTML = result;
     }
