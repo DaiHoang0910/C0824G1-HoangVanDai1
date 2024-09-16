@@ -8,7 +8,7 @@
     <form>
         Nhap so a: <input type="number" id="numberA" value=""/><br/><br/>
         Nhap so b: <input type="number" id="numberB" value=""/><br/><br/>
-        <button type="button" onclick="check();">Kiem Tra</button>
+        <button type="button" onclick="check();">Tinh ( a / b )</button>
         <p id="result"></p>
         <input type="reset" value="Nhap Lai">
     </form>
@@ -18,8 +18,11 @@
             let b = parseFloat(document.getElementById('numberB').value);
             let result;
 
-            if (a % b === 0) {
+            if (a % b === 0){
                 result = "a chia het cho b";
+            }
+            else if (b===0){
+                result = "phep chia khong thuc hien duoc, vui long nhap lai( mau so khac 0)";
             }
             else {
                 result = "a khong chia het cho b"
