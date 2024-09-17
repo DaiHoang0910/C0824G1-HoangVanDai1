@@ -5,97 +5,103 @@
     <title>Tinh gia dien</title>
 </head>
 <body>
-  <form>
-    Nhap so luong dien tieu thu trong thang(kWh): <input type="number" id="tongDien" value=""/>= Tong cua cac muc su dung.<br/><br/>
+<form>
+    Nhap so luong dien tieu thu trong thang(kWh): <input type="number" id="tongDien" value=""/>= Tong cua cac muc su
+    dung.<br/><br/>
     <table style="width:50%">
-      <tr>
-        <td></td>
-        <th style="text-align: left">MỨC SỬ DỤNG(kWh)</th>
-        <th style="text-align: left">ĐƠN GIÁ (đồng/kWh)</th>
-      </tr>
-      <tr>
-        <td>Bậc Thang 1</td>
-        <td> 0 - 50 </td>
-        <td>1806</td>
-      </tr>
-      <tr>
-        <td>Bậc Thang 2</td>
-        <td> 51 - 100 </td>
-        <td>1866</td>
-      </tr>
-      <tr>
-        <td>Bậc Thang 3</td>
-        <td> 101 - 200 </td>
-        <td>2167</td>
-      </tr>
-      <tr>
-        <td>Bậc Thang 4</td>
-        <td> 201 - 300 </td>
-        <td>2729</td>
-      </tr>
-      <tr>
-        <td>Bậc Thang 5</td>
-        <td> 301 - 400 </td>
-        <td>3050</td>
-      </tr>
-      <tr>
-        <td>Bậc Thang 6</td>
-        <td> >400 </td>
-        <td>3151</td>
-      </tr>
-    </table><br/><br/>
+        <tr>
+            <td></td>
+            <th style="text-align: left">MỨC SỬ DỤNG(kWh)</th>
+            <th style="text-align: left">ĐƠN GIÁ (đồng/kWh)</th>
+        </tr>
+        <tr>
+            <td>Bậc Thang 1</td>
+            <td> 0 - 50</td>
+            <td>1806</td>
+        </tr>
+        <tr>
+            <td>Bậc Thang 2</td>
+            <td> 51 - 100</td>
+            <td>1866</td>
+        </tr>
+        <tr>
+            <td>Bậc Thang 3</td>
+            <td> 101 - 200</td>
+            <td>2167</td>
+        </tr>
+        <tr>
+            <td>Bậc Thang 4</td>
+            <td> 201 - 300</td>
+            <td>2729</td>
+        </tr>
+        <tr>
+            <td>Bậc Thang 5</td>
+            <td> 301 - 400</td>
+            <td>3050</td>
+        </tr>
+        <tr>
+            <td>Bậc Thang 6</td>
+            <td> >400</td>
+            <td>3151</td>
+        </tr>
+    </table>
+    <br/><br/>
     <button type="button" onclick="tinh()">Thanh Tien:</button>
     <p id="result"></p>
     <input type="reset" value="Nhap Lai"/>
-  </form>
-  <script>
-    function tinh(){
-      let donGia1 = 1806;
-      let donGia2 = 1866;
-      let donGia3 = 2167;
-      let donGia4 = 2729;
-      let donGia5 = 3050;
-      let donGia6 = 3151;
-      let tongDien = parseInt(document.getElementById('tongDien').value);
-      let gia1, gia2, gia3, gia4, gia5, gia6;
+</form>
+<script>
+    function tinh() {
+        let donGia1 = 1806;
+        let donGia2 = 1866;
+        let donGia3 = 2167;
+        let donGia4 = 2729;
+        let donGia5 = 3050;
+        let donGia6 = 3151;
+        let tongDien = parseInt(document.getElementById('tongDien').value);
+        let gia1, gia2, gia3, gia4, gia5, gia6;
 
-      let result, result1;
-      if (tongDien <= 50) {
-        gia1 = tongDien * donGia1;
-        result = "Tien dien thang nay la: "+ gia1 +" vnd";
-      }else if (tongDien <= 100){
-        gia1 = 50 * donGia1;
-        gia2 = gia1 + (tongDien - 50) * donGia2;
-        result = "Tien dien thang nay la: "+ gia2 +" vnd";
-      }else if (tongDien <= 200){
-        gia1 = 50 * donGia1;
-        gia2 = gia1 + 50 * donGia2;
-        gia3 = gia2 + (tongDien - 100) *donGia3;
-        result = "Tien dien thang nay la: "+ gia3 +" vnd";
-      }else if (tongDien <= 300){
-        gia1 = 50 * donGia1;
-        gia2 = gia1 + 50 * donGia2;
-        gia3 = gia2 + 100 *donGia3;
-        gia4 = gia3 + (tongDien - 200) *donGia4;
-        result = "Tien dien thang nay la: "+ gia4 +" vnd";
-      }else if (tongDien <= 400){
-        gia1 = 50 * donGia1;
-        gia2 = gia1 + 50 * donGia2;
-        gia3 = gia2 + 100 *donGia3;
-        gia4 = gia3 + 100 *donGia4;
-        gia5 = gia4 + (tongDien - 300) *donGia5;
-        result = "Tien dien thang nay la: "+ gia5 +" vnd"
-      }else {
-        gia1 = 50 * donGia1;
-        gia2 = gia1 + 50 * donGia2;
-        gia3 = gia2 + 100 *donGia3;
-        gia4 = gia3 + 100 *donGia4;
-        gia5 = gia4 + 100 *donGia5;
-        gia6 = gia5 + (tongDien - 400) *donGia6;
-        result = "Tien dien thang nay la: "+ gia6 +" vnd"
-      }
-      document.getElementById('result').innerHTML=result;
+        let result;
+        if (isNaN(tongDien)) {
+            result = "Vui long nhap lai so dien";
+        } else {
+            if (tongDien <= 50) {
+                gia1 = tongDien * donGia1;
+                result = "Tien dien thang nay la: " + gia1 + " vnd";
+            } else if (tongDien <= 100) {
+                gia1 = 50 * donGia1;
+                gia2 = gia1 + (tongDien - 50) * donGia2;
+                result = "Tien dien thang nay la: " + gia2 + " vnd";
+            } else if (tongDien <= 200) {
+                gia1 = 50 * donGia1;
+                gia2 = gia1 + 50 * donGia2;
+                gia3 = gia2 + (tongDien - 100) * donGia3;
+                result = "Tien dien thang nay la: " + gia3 + " vnd";
+            } else if (tongDien <= 300) {
+                gia1 = 50 * donGia1;
+                gia2 = gia1 + 50 * donGia2;
+                gia3 = gia2 + 100 * donGia3;
+                gia4 = gia3 + (tongDien - 200) * donGia4;
+                result = "Tien dien thang nay la: " + gia4 + " vnd";
+            } else if (tongDien <= 400) {
+                gia1 = 50 * donGia1;
+                gia2 = gia1 + 50 * donGia2;
+                gia3 = gia2 + 100 * donGia3;
+                gia4 = gia3 + 100 * donGia4;
+                gia5 = gia4 + (tongDien - 300) * donGia5;
+                result = "Tien dien thang nay la: " + gia5 + " vnd"
+            } else {
+                gia1 = 50 * donGia1;
+                gia2 = gia1 + 50 * donGia2;
+                gia3 = gia2 + 100 * donGia3;
+                gia4 = gia3 + 100 * donGia4;
+                gia5 = gia4 + 100 * donGia5;
+                gia6 = gia5 + (tongDien - 400) * donGia6;
+                result = "Tien dien thang nay la: " + gia6 + " vnd"
+            }
+        }
+        document.getElementById('result').innerHTML = result;
     }
-  </script>
+</script>
 </body>
 </html>
