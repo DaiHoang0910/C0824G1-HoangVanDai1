@@ -17,15 +17,16 @@ Nhap so lai suat hang thang(%) : <input type="number" id="lai" value=""/><br/>
         let lai = parseFloat(document.getElementById('lai').value);
         let a = Math.pow((1 + lai / 100), time);
         let result;
-        if (tien < 0) {
+        if (isNaN(tien) || isNaN(time) || isNaN(lai)) {
+            result = "Khong duoc nhap chu"
+        } else if (tien < 0) {
             result = "Vui long nhap lai";
         } else if (time < 0) {
             result = "Vui long nhap lai";
-        } else if (lai < 0){
+        } else if (lai < 0) {
             result = "Vui long nhap lai";
-        }
-        else {
-            result = tien*a- tien + " (trieu) vnd";
+        } else {
+            result = tien * a - tien + " (trieu) vnd";
         }
         document.getElementById('result').innerHTML = result;
     }

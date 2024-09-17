@@ -5,24 +5,26 @@
     <title>Tinh dien tich hinh vuong</title>
 </head>
 <body>
-  <form>
+<form>
     Nhap canh hinh vuong a: <input type="number" id="canhA" value=""/><br/><br/>
     <button type="button" onclick="tinh();">Tinh</button>
     <p id="result"></p>
     <input type="reset" value="Nhap Lai"/>
-  </form>
-  <script>
-    function tinh(){
-      let a = parseInt(document.getElementById('canhA').value);
-      let s = a * a;
-      let result;
-      if (a > 0){
-          result = "Dien tich hinh vuong la: "+s;
-      }else{
-          result = "Vui long nhap lai";
-      }
-      document.getElementById('result').innerHTML=result;
+</form>
+<script>
+    function tinh() {
+        let a = parseInt(document.getElementById('canhA').value);
+        let s = a * a;
+        let result;
+        if (isNaN(a)) {
+            result = "Khong duoc nhap chu";
+        } else if (a > 0) {
+            result = "Dien tich hinh vuong la: " + s;
+        } else {
+            result = "Vui long nhap lai";
+        }
+        document.getElementById('result').innerHTML = result;
     }
-  </script>
+</script>
 </body>
 </html>

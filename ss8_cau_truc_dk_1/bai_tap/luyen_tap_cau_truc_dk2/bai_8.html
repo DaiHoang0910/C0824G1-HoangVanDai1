@@ -15,7 +15,10 @@
     function check(){
       let a = parseFloat(document.getElementById('number').value);
       let result;
-      if (a > 0 && a < 120){
+      if (isNaN(a)){
+          result = "Khong duoc nhap chu";
+      }
+      else if (a > 0 && a < 120){
         result = "So duoc nhap vao la tuoi cua 1 nguoi"
       }
       else{

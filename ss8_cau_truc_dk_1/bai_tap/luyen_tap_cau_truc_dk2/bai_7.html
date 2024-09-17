@@ -21,22 +21,23 @@
         let c = parseFloat(document.getElementById('numberC').value);
         let x = b * b - 4 * a * c;
         let result;
-
-        if (x < 0) {
-            result = "Phuong trinh vo nghiem";
-        } else if (x == 0) {
-            result = "Phuong trinh co nghiem kep x1 = x2 = " + (-b / 2 * a);
-        } else if (x > 0) {
-            result = "Phuong trinh co 2 nghiem phan biet: x1 = " + (-b + Math.sqrt(x)) / 2 * a + " x2 = " + (-b - Math.sqrt(x)) / 2 * a;
-        } else (a == 0)
-        {
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            result = "Khong duoc nhap chu"
+        }
+        if (a == 0) {
             if (b != 0) {
-                result = "Ket qua: " + x;
+                result = "Ket qua: " + -b / c;
             } else if (b == 0 & c == 0) {
                 result = "Phuong trinh co vo so nghiem"
             } else {
                 result = "Phuong trinh vo nghiem";
             }
+        } else if (x < 0) {
+            result = "Phuong trinh vo nghiem";
+        } else if (x == 0) {
+            result = "Phuong trinh co nghiem kep x1 = x2 = " + (-b / 2 * a);
+        } else if (x > 0) {
+            result = "Phuong trinh co 2 nghiem phan biet: x1 = " + (-b + Math.sqrt(x)) / 2 * a + " x2 = " + (-b - Math.sqrt(x)) / 2 * a;
         }
         document.getElementById('result').innerHTML = result;
     }

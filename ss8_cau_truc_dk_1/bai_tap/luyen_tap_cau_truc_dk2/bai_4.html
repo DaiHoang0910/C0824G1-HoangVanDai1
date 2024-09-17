@@ -5,30 +5,32 @@
     <title>Tinh dien tich hinh chu nhat</title>
 </head>
 <body>
-  <form>
+<form>
     Nhap chieu dai a: <input type="number" id="chieuDai" value=""/><br/><br/>
     Nhap chieu rong b: <input type="number" id="chieuRong" value=""/><br/><br/>
     <button type="button" onclick="tinh();">Tinh</button>
     <p id="result"></p>
     <input type="reset" value="Nhap Lai"/>
-  </form>
-  <script>
-    function tinh(){
-      let a = parseFloat(document.getElementById('chieuDai').value);
-      let b = parseFloat(document.getElementById('chieuRong').value);
-      let s;
-      let result;
+</form>
+<script>
+    function tinh() {
+        let a = parseFloat(document.getElementById('chieuDai').value);
+        let b = parseFloat(document.getElementById('chieuRong').value);
+        let s;
+        let result;
+        if (isNaN(a)) {
+            result = "Khong duoc nhap chu";
+        } else if (isNaN(b)) {
+            result = "Khong duoc nhap chu";
+        } else if (a > b && b > 0) {
+            s = a * b;
+            result = "Dien tich hinh chu nhat la: " + s;
+        } else {
+            result = "Vui long nhap lai - chieu dai > chieu rong";
+        }
 
-      if ( a > b && b > 0){
-        s = a * b;
-        result = "Dien tich hinh chu nhat la: "+s;
-      }
-      else{
-        result = "Vui long nhap lai - chieu dai > chieu rong";
-      }
-
-      document.getElementById('result').innerHTML=result;
+        document.getElementById('result').innerHTML = result;
     }
-  </script>
+</script>
 </body>
 </html>

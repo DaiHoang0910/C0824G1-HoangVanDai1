@@ -15,12 +15,13 @@
 </form>
 <script>
     function kiemTra() {
-        let a = parseFloat(document.getElementById('numberA').value);
-        let b = parseFloat(document.getElementById('numberB').value);
-        let c = parseFloat(document.getElementById('numberC').value);
+        let a = parseInt(document.getElementById('numberA').value);
+        let b = parseInt(document.getElementById('numberB').value);
+        let c = parseInt(document.getElementById('numberC').value);
         let result;
-
-        if (a < 0) {
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            result = "Khong duoc nhap chu"
+        } else if (a < 0) {
             result = "Vui long nhap lai"
         } else if (b < 0) {
             result = "Vui long nhap lai"
