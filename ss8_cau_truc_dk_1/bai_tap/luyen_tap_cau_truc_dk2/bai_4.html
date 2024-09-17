@@ -16,12 +16,12 @@
     function tinh(){
       let a = parseFloat(document.getElementById('chieuDai').value);
       let b = parseFloat(document.getElementById('chieuRong').value);
-      let S;
+      let s;
       let result;
 
-      if ( a > b){
-        S = a * b;
-        result = "Dien tich hinh chu nhat la: "+S;
+      if ( a > b && b > 0){
+        s = a * b;
+        result = "Dien tich hinh chu nhat la: "+s;
       }
       else{
         result = "Vui long nhap lai - chieu dai > chieu rong";

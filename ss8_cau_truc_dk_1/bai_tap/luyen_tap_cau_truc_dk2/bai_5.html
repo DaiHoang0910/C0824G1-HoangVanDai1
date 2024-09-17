@@ -16,7 +16,12 @@
     function tinh(){
       let a = parseFloat(document.getElementById('canhA').value);
       let b = parseFloat(document.getElementById('canhB').value);
-      let result = "Dien tich tam giac vuong: " +(a * b)/2;
+      let result;
+      if ( a > 0 && b > 0){
+        result = "Dien tich tam giac vuong: " +(a * b)/2;
+      }else{
+        result = "Vui long nhap lai";
+      }
       document.getElementById('result').innerHTML=result;
     }
   </script>

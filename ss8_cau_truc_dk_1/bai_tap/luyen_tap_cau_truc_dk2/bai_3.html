@@ -13,9 +13,14 @@
   </form>
   <script>
     function tinh(){
-      let a = parseFloat(document.getElementById('canhA').value);
-      let S = a * a;
-      let result = "Dien tich hinh vuong la: "+S;
+      let a = parseInt(document.getElementById('canhA').value);
+      let s = a * a;
+      let result;
+      if (a > 0){
+          result = "Dien tich hinh vuong la: "+s;
+      }else{
+          result = "Vui long nhap lai";
+      }
       document.getElementById('result').innerHTML=result;
     }
   </script>
