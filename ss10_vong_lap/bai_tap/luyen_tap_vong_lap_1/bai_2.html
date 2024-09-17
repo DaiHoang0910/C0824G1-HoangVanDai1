@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let temparature = prompt("Nhap thong tin nhiet do");
+    while (temparature > 100 || temparature < 20) {
+        if (temparature > 100) {
+            alert("Can giam nhiet do");
+            temparature = prompt("Nhap thong tin nhiet do");
+        } else if (temparature < 20) {
+            alert("Can ha nhiet do");
+            temparature = prompt("Nhap thong tin nhiet do");
+        }
+    }
+    alert("Nhiet do binh thuong")
+</script>
+</html>
