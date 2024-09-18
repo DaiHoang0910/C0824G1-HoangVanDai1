@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="play()">Play</button>
+</body>
+<script>
+    function play() {
+        let khoang = Number(prompt("So ban muon doan trong khoang lon nhat la bao nhieu!"));
+        let number = Number(prompt("Nhap vao so muon doan"));
+        let numRandom = Math.floor(Math.random() * khoang);
+        let count = 0;
+        while (numRandom != number) {
+            count++;
+            if (count <= 3) {
+                if (numRandom > number) {
+                    alert("So ban nhap be hon");
+                    number = Number(prompt("Nhap vao so muon doan"));
+                } else if (numRandom < number) {
+                    alert("So ban nhap lon hon");
+                    number = Number(prompt("Nhap vao so muon doan"));
+                } else {
+                    alert("Ban da doan dung");
+                    break;
+                }
+            } else {
+                alert("Ban doan qua so lan quy dinh! ");
+                break;
+            }
+        }
+        if (numRandom == number){
+            alert("Ban da doan dung");
+        }else {
+            alert("Vui long nhap lai");
+        }
+    }
+</script>
+</html>

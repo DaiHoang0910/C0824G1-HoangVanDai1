@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let count = 0;
+    let sum = 0;
+    let daySo = ""
+    for (let i = 1; ; i++) {
+        if (i % 7 == 0) {
+            daySo += i + " "
+            sum += i
+            count++
+            if (count == 30) break
+        }
+    }
+    document.write(daySo + "<br>")
+    document.write("Tổng bằng " + sum)
+</script>
+</html>
