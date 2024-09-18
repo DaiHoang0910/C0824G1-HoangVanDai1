@@ -8,16 +8,19 @@
 
 </body>
 <script>
-    let i;
-    let j;
-    let star = "*";
-    for (i = 0; i < 20; i++) {
-        document.write(star+" ");
-    }
-    for (j = 0; j < 8; j++){
-        document.write(star);
+    let star="*";
+    for (let i=0;i<=8;i++){
+        for (let j = 0;j<=30;j++){
+            if (i == 0 || i == 8) {
+                document.write(star);
+            }else{
+                document.write("&nbsp"+"&nbsp");
+            }
+            if (j == 0 || j== 30) {
+                document.write(star);
+            }
+        }
         document.write("<br>")
     }
-    document.write("<br><br>");
 </script>
 </html>
