@@ -6,19 +6,19 @@
 </head>
 <body>
 <script>
-    let F = 0, F0 = 0, F1 = 0, sum = 0
+    let f = 0, f0 = 0, f1 = 0, sum = 0
     let fibonacci = "";
     for (let i = 0; i < 20; i++) {
         if (i == 0) {
-            F = 1
-            F1 = 1
-            fibonacci += F + " "
+            f = 1
+            f1 = 1
+            fibonacci += f + " "
         } else {
-            F = F0 + F1
-            F0 = F1
-            F1 = F
-            fibonacci += F + " "
-            sum += F;
+            f = f0 + f1
+            f0 = f1
+            f1 = f
+            fibonacci += f + " "
+            sum += f;
         }
     }
     document.write(sum);
