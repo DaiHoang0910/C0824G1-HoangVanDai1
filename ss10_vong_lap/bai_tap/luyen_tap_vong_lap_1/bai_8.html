@@ -9,26 +9,26 @@
 </body>
 <script>
     function play() {
-        let khoang = Number(prompt("So ban muon doan trong khoang lon nhat la bao nhieu!"));
-        let number = Number(prompt("Nhap vao so muon doan"));
-        let numRandom = Math.floor(Math.random() * khoang);
+        let number = Number(prompt("So ban muon doan trong khoang lon nhat la bao nhieu!"));
+        let numberGuess = Number(prompt("Nhap vao so muon doan"));
+        let numRandom = Math.floor(Math.random() * number);
         let count = 0;
-        while (numRandom != number) {
+        while (numRandom != numberGuess) {
             count++;
             if (count <= 3) {
-                if (numRandom > number) {
+                if (numRandom > numberGuess) {
                     alert("So ban nhap be hon");
-                    number = Number(prompt("Nhap vao so muon doan"));
-                } else if (numRandom < number) {
+                    numberGuess = Number(prompt("Nhap vao so muon doan"));
+                } else if (numRandom < numberGuess) {
                     alert("So ban nhap lon hon");
-                    number = Number(prompt("Nhap vao so muon doan"));
+                    numberGuess = Number(prompt("Nhap vao so muon doan"));
                 }
             } else {
                 alert("Ban doan qua so lan quy dinh! ");
                 break;
             }
         }
-        if (numRandom == number){
+        if (numRandom == numberGuess){
             alert("Ban da doan dung");
         }else {
             alert("Vui long nhap lai");
