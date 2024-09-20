@@ -5,40 +5,40 @@
     <title>Title</title>
 </head>
 <body>
-  Nhap so V: <input type="number" id="number" value=""/>
-  <button type="button" onclick="dlt()">Xoa phan tu trong mang</button>
-  <p id="result"></p>
-  <p id="result1"></p>
-  <p id="result2"></p>
+Nhap so V: <input type="number" id="number" value=""/>
+<button type="button" onclick="dlt()">Xoa phan tu trong mang</button>
+<p id="result"></p>
+<p id="result1"></p>
+<p id="result2"></p>
 </body>
-  <script>
+<script>
     let arr = [];
     for (let i = 0; i < 10; i++) {
-      arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+        arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
     }
     document.getElementById('result').innerHTML = "Chuoi ban dau: " + arr;
-    function dlt(){
-      let result;
-      let result1;
-      let number = parseInt(document.getElementById('number').value);
-      if (isNaN(number)) {
-        alert("Vui long nhap lai")
-      }else {
-        for (let i = 0; i < 10; i++) {
-          if (number == arr[i]) {
-            result = "V is in the array";
-            arr[i] = arr[i+1]
-            arr.push("0");
-            result1 = "Chuoi sau khi xoa" + arr;
-            break;
-          } else {
-            result = "V is not in the array";
-          }
+
+    function dlt() {
+        let result;
+        let result1;
+        let number = parseInt(document.getElementById('number').value);
+        if (isNaN(number)) {
+            alert("Vui long nhap lai")
+        } else {
+            for (let i = 0; i < 10; i++) {
+                if (number == arr[i]) {
+                    result = "V is in the array";
+                    arr.splice(i, 1);
+                    result1 = "Chuoi sau khi xoa " + arr;
+                    break;
+                } else {
+                    result = "V is not in the array";
+                }
+            }
+            document.getElementById('result2').innerHTML = result1;
+            document.getElementById('result1').innerHTML = result;
         }
-        document.getElementById('result2').innerHTML=result1;
-        document.getElementById('result1').innerHTML= result;
-      }
     }
 
-  </script>
+</script>
 </html>
