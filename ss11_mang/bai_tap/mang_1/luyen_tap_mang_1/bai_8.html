@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <button type="button" onclick="arrange()">Sap xep</button>
+  <p id="result"></p>
+  <p id="result1"></p>
+</body>
+  <script>
+    let result;
+    let n = +prompt("Nhập số lượng phần tử: ")
+    let arr = []
+    while (n < 0 || n > 20 || !(parseInt(n) === n)) {
+      n = +prompt("n phải là số nguyên và trong khoảng từ 0 đến 20. Nhập lại n: ")
+    }
+    for (let i = 0; i < n; i++) {
+      arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+    }
+    document.getElementById('result').innerHTML = "Chuoi: " + arr;
+
+    function arrange(){
+      arr.sort(function (a, b) {
+        return b - a;
+      });
+      result = "Chuoi sau khi sap xep giam dan: " + arr;
+      document.getElementById('result1').innerHTML=result;
+    }
+  </script>
+</html>

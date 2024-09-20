@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        Nhap so V: <input type="number" id="number" value=""/>
+        <button type="button" onclick="check()">Kiem tra so vua nhap co thuoc chuoi khong?</button>
+        <p id="result"></p>
+        <p id="result1"></p>
+        <input type="reset"/>
+    </form>
+</body>
+<script>
+    let arr = [];
+    for (let i = 0; i < 10; i++) {
+        arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+    }
+    document.getElementById('result').innerHTML = "Array: " + arr;
+
+    function check() {
+        let result;
+        let number = parseInt(document.getElementById('number').value);
+        if (isNaN(number)) {
+            alert("Vui long nhap lai")
+        }else {
+            for (let i = 0; i < 10; i++) {
+                if (number == arr[i]) {
+                    result = "V is in the array";
+                    break;
+                } else {
+                    result = "V is not in the array";
+                }
+            }
+            document.getElementById('result1').innerHTML= result;
+        }
+    }
+</script>
+</html>

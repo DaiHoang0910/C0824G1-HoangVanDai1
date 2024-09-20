@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
+Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.-->
+<button type="button" onclick="tim()">Tim so lon nhat trong day so</button>
+<p id="result"></p>
+</body>
+<script>
+    let n = +prompt("Nhập số lượng phần tử: ")
+    let arr = []
+    while (n < 0 || n > 20 || !(parseInt(n) === n)) {
+        n = +prompt("n phải là số nguyên và trong khoảng từ 0 đến 20. Nhập lại n: ")
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+    }
+    document.getElementById('result').innerHTML = "Chuoi: " + arr;
+    function tim() {
+        let max = arr[0];
+        let index = 0;
+        let result;
+        let i;
+        for (i = 0; i < arr.length; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+                index = i+1;
+            }
+            result = "So lon nhat la: " + max +"<br>" +"La phan tu thu: " + index;
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>

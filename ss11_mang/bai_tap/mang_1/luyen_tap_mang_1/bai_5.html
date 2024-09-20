@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="dem()">Dem so nguyen am trong chuoi</button>
+<p id="result"></p>
+</body>
+<script>
+    let n = +prompt("Nhập số lượng phần tử: ");
+    let arr = [];
+    while (n < 0 || n > 20 || !(parseInt(n) === n)) {
+        n = +prompt("n phải là số nguyên và trong khoảng từ 0 đến 20. Nhập lại n: ")
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+    }
+    document.getElementById('result').innerHTML = "Chuoi: " + arr;
+
+    function dem() {
+        let count = 0;
+        for (let i = 0; i < n; i++) {
+            if (arr[i] < 0) {
+                count++;
+                result = "So nguyen am trong chuoi la: " + count;
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    }
+
+</script>
+</html>

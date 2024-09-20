@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form>
+        <input type="number" id="txtValue"/>
+        <input type="button" id="btnAdd" value="Add" onclick="add_element_to_array();"/>
+        <input type="button" id="btnDisplay" value="Display" onclick="display_array();"/><br/><br>
+        <button type="button" onclick="tim()">Tim so lon nhat trong day so</button><br><br>
+        <button type="button" onclick="stb()">Tinh trung binh cac phan tu trong day so</button>
+        <p id="result"></p></br>
+    </form>
+</body>
+<script>
+    let x = 0;
+    let array = Array();
+    let result;
+    let i;
+
+    function add_element_to_array() {
+        let number = parseInt(document.getElementById('txtValue').value);
+        if (isNaN(number)){
+            alert("Vui long nhap lai, du lieu la so va la so nguyen");
+        }else {
+            array[x] = document.getElementById("txtValue").value;
+            alert("Element: " + array[x] + " Added at index " + x);
+            x++;
+            document.getElementById("txtValue ").value = "";
+        }
+    }
+
+    function display_array() {
+        let e = "<hr/>";
+        for (i = 0; i < array.length; i++) {
+            e += "Element " + i + " = " + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+    }
+    function tim() {
+        let max = array[0];
+        for (i = 0; i < array.length; i++) {
+            if (max < array[i]) {
+                max = array[i];
+            }
+            result = "So lon nhat la: " + max;
+        }
+        document.getElementById('result').innerHTML = result;
+    }
+    function stb(){
+        let sum = 0;
+        let tb;
+        for (i = 0; i < array.length; i++){
+            sum = sum + parseInt(array[i]);
+        }
+        tb = sum/array.length;
+        result = "Trung binh cong cua day so: " +tb;
+        document.getElementById('result').innerHTML=result;
+    }
+</script>
+</html>
