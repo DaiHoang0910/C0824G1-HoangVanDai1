@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type="button" onclick="dem()">Dem so tu trong chuoi</button>
+<p id="result"></p>
+</body>
+<script>
+    function dem() {
+        let chuoi = prompt("Nhap chuoi:");
+        let arr = chuoi.split(' ') ;
+            result = "So tu trong chuoi: " +arr.length;
+        document.getElementById('result').innerHTML = result;
+    }
+</script>
+</html>

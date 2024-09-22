@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button type="button" onclick="thay()">Thay the tu trong chuoi</button>
+    <p id="result"></p>
+</body>
+    <script>
+        function thay() {
+            let chuoi = prompt("Nhap chuoi:");
+            let arr = chuoi.split('') ;
+            for (let i = 0; i < arr.length; i++){
+                if (arr[i] ==='-'){
+                    arr[i] ='_';
+                    result = "Chuoi moi:" +arr;
+                }
+            }
+            document.getElementById('result').innerHTML = result;
+        }
+    </script>
+</html>
