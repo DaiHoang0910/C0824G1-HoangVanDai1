@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+  <script>
+    function calculateFactorial(num){
+      let result;
+      let factorial = 1;
+        if (num == 0 || num == 1) {
+          result = "Giai thua = 1";
+        } else {
+          for (let i = 1; i <= num; i++) {
+            factorial = factorial * i;
+          }
+          result = "Giai thua cua " + num + " = "+factorial;
+        }
+        return result;
+    }
+    let num1 = prompt("Enter a number");
+    while (isNaN(num1) || !(parseInt(num1)===num1)){
+      alert("So nhap vao la so nguyen");
+      num1 = prompt("Enter a number");
+    }
+    document.write(calculateFactorial(num1));
+  </script>
+</html>
