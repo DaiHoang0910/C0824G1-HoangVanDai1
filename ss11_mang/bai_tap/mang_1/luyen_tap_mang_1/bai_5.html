@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-<button type="button" onclick="dem()">Dem so nguyen am trong chuoi</button>
+<button type="button" onclick="countNegative()">Dem so nguyen am trong chuoi</button>
 <p id="result"></p>
 </body>
 <script>
@@ -19,7 +19,7 @@
     }
     document.getElementById('result').innerHTML = "Chuoi: " + arr;
 
-    function dem() {
+    function countNegative() {
         let count = 0;
         for (let i = 0; i < n; i++) {
             if (arr[i] < 0) {

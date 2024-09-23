@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-    <button type="button" onclick="tim()">Tim so lon nhat trong day so</button>
-    <button type="button" onclick="tb()">Tinh trung binh cac phan tu trong day so</button>
+    <button type="button" onclick="find()">Tim so lon nhat trong day so</button>
+    <button type="button" onclick="avg()">Tinh trung binh cac phan tu trong day so</button>
     <p id="result"></p>
 </body>
 <script>
@@ -21,7 +21,7 @@
         arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
     }
     document.getElementById('result').innerHTML = "Chuoi: " + arr;
-    function tim() {
+    function find() {
         let max = arr[0];
         let index = 0;
         for (i = 0; i < arr.length; i++) {
@@ -33,7 +33,7 @@
         }
         document.getElementById('result').innerHTML = result;
     }
-    function tb(){
+    function avg(){
         let tb;
         let sum = 0;
         for (i = 0; i < arr.length; i++){

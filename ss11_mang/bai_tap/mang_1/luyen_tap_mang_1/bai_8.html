@@ -19,13 +19,13 @@
     for (let i = 0; i < n; i++) {
       arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
     }
-    document.getElementById('result').innerHTML = "Chuoi: " + arr;
+    document.getElementById('result').innerHTML = "Mang: " + arr;
 
     function arrange(){
       arr.sort(function (a, b) {
         return b - a;
       });
-      result = "Chuoi sau khi sap xep giam dan: " + arr;
+      result = "Mang sau khi sap xep giam dan: " + arr;
       document.getElementById('result1').innerHTML=result;
     }
   </script>

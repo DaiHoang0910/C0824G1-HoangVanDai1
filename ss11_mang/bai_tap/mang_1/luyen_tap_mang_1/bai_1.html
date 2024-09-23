@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-  <button type="button" onclick="tinh()">Tim xem bao nhieu so nguyen lon hon 10</button>
+  <button type="button" onclick="find()">Tim xem bao nhieu so nguyen lon hon 10</button>
   <p id="result"></p>
 </body>
   <script>
@@ -18,7 +18,7 @@
           arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
       }
       document.getElementById('result').innerHTML = "Chuoi: " + arr;
-    function tinh() {
+    function find() {
       let i;
       let count = 0;
       for (i = 0; i < arr.length; i++) {

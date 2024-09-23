@@ -7,7 +7,7 @@
 <body>
 <!--  Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.
 Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.-->
-<button type="button" onclick="tim()">Tim so lon nhat trong day so</button>
+<button type="button" onclick="findMax()">Tim so lon nhat trong day so</button>
 <p id="result"></p>
 </body>
 <script>
@@ -20,7 +20,7 @@ Chương trình hiển thị ra được phần tử có giá trị lớn nhất
         arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
     }
     document.getElementById('result').innerHTML = "Chuoi: " + arr;
-    function tim() {
+    function findMax() {
         let max = arr[0];
         let index = 0;
         let result;

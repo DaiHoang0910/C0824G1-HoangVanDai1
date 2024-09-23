@@ -16,7 +16,7 @@ Nhap so V: <input type="number" id="number" value=""/>
     for (let i = 0; i < 10; i++) {
         arr[i] = +prompt(`Nhập phần tử thứ ${i}: `)
     }
-    document.getElementById('result').innerHTML = "Chuoi ban dau: " + arr;
+    document.getElementById('result').innerHTML = "Mang ban dau: " + arr;
 
     function dlt() {
         let result;
@@ -29,7 +29,7 @@ Nhap so V: <input type="number" id="number" value=""/>
                 if (number == arr[i]) {
                     result = "V is in the array";
                     arr.splice(i, 1);
-                    result1 = "Chuoi sau khi xoa " + arr;
+                    result1 = "Mang sau khi xoa " + arr;
                     break;
                 } else {
                     result = "V is not in the array";
