@@ -14,14 +14,10 @@ Nhap tu: <input type="text" id="string"/>
         let arr_eng = ["banana", "apple", "orange", "pen", "pencil", "book"];
         let arr_vie = ["chuối", "táo", "cam", "bút", "bút chì", "sách"];
         let string = document.getElementById("string").value;
-        let index_eng = 0;
         let result = "";
         for (let i = 0; i < arr_eng.length; i++) {
             if (string == arr_eng[i]) {
-                index_eng = i;
-                if (index_eng == i) {
-                    result = arr_vie[i];
-                }
+                result = arr_vie[i];
             }
         }
         document.getElementById("result").innerHTML = result;

@@ -5,6 +5,24 @@
     <title>Title</title>
 </head>
 <body>
-
+    Ngôi sao cần tìm: <input type="text" id="star"/>
+    <button type="button" onclick="findStar()">Tìm</button>
+    <p id="result"></p>
 </body>
+<script>
+    function findStar() {
+        let arrStar = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+        let arrConstellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+        let star = document.getElementById("star").value;
+        let result = "";
+        for (let i = 0; i < arrStar.length; i++) {
+            if (star == arrStar[i]) {
+                result ="Thuộc chòm sao: "+ arrConstellation[i];
+            }else {
+                result ="Không tìm thấy sao"
+            }
+        }
+        document.getElementById("result").innerHTML = result;
+    }
+</script>
 </html>

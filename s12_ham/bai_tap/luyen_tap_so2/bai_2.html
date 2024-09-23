@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+  <script>
+    function calculate(r){
+      let pi = Math.PI;
+      let s = pi * r * r;
+      let c = 2 * pi * r;
+      let result = "Dien tich hinh tron: "+ s +"<br>"+ "Chu vi hinh tron: "+c ;
+      return result;
+    }
+    let num = prompt("Nhap ban kinh hinh tron")
+    let caculateNumber = calculate(num);
+    document.write(caculateNumber);
+  </script>
+</html>
