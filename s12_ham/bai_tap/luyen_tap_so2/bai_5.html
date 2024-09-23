@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function findMin(a, b, c) {
+        let min = a;
+        let result;
+        if (b < min && b < c) {
+            result = "Min: " + b;
+        } else if (b > c) {
+            if (c < min) {
+                result = "Min: " + c;
+            }
+        }else {
+            result = "Min: "+min;
+        }
+        return result;
+    }
+    let a1 = prompt("Nhap so a");
+    while (isNaN(a1) || !parseInt(a1)===a1){
+        alert("Nhap lai so a(la so nguyen)");
+        a1 = prompt("Nhap so a");
+    }
+    let b1 = prompt("Nhap so b");
+    while (isNaN(b1) || !parseInt(b1)===b1){
+        alert("Nhap lai so b(la so nguyen)");
+        b1 = prompt("Nhap so b");
+    }
+    let c1 = prompt("Nhap so c");
+    while (isNaN(c1) || !parseInt(c1)===c1){
+        alert("Nhap lai so c(la so nguyen)");
+        c1 = prompt("Nhap so c");
+    }
+    document.write(findMin(a1, b1, c1));
+</script>
+</html>
