@@ -13,6 +13,10 @@
             return result;
         }
         let number1 = prompt("Enter a number");
+        while (isNaN(number1)){
+            alert("Vui long nhap lai");
+            number1 = prompt("Enter a number");
+        }
         let squareOfNumber1 = square(number1);
         document.write("Binh phuong cua " +number1+" la "+squareOfNumber1)
     </script>

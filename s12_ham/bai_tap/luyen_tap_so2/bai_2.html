@@ -16,6 +16,10 @@
       return result;
     }
     let num = prompt("Nhap ban kinh hinh tron")
+    while (isNaN(num) || num < 0){
+        alert("Vui long nhap lai ban kinh(la so va > 0)");
+        num = prompt("Nhap ban kinh hinh tron")
+    }
     let caculateNumber = calculate(num);
     document.write(caculateNumber);
   </script>
