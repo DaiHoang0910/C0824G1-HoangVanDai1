@@ -5,26 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-    <button type="button" onclick="noi()">Noi</button>
+    <button type="button" onclick="joinArray()">Noi</button>
     <p id="result"></p>
     <p id="result1"></p>
     <p id="result2"></p>
 </body>
     <script>
-        let arr_a = [];
-        let arr_b = [];
+        let arrA = [];
+        let arrB = [];
         for (let i = 0; i < 10; i++) {
-            arr_a[i] = +prompt(`Nhập phần tử thứ ${i} cua mang a: `)
+            arrA[i] = +prompt(`Nhập phần tử thứ ${i} cua mang a: `)
         }
-        document.getElementById('result').innerHTML = "Chuoi: " + arr_a;
+        document.getElementById('result').innerHTML = "Chuoi: " + arrA;
         for (let j = 0; j < 10; j++) {
-            arr_b[j] = +prompt(`Nhập phần tử thứ ${j} cua mang b: `)
+            arrB[j] = +prompt(`Nhập phần tử thứ ${j} cua mang b: `)
         }
-        document.getElementById('result1').innerHTML = "Chuoi: " + arr_b;
+        document.getElementById('result1').innerHTML = "Chuoi: " + arrB;
 
-        function noi(){
-            let arr_c = arr_a.concat(arr_b);
-            document.getElementById('result2').innerHTML = "Mang sau khi noi: " +arr_c;
+        function joinArray(){
+            let arrC = arrA.concat(arrB);
+            document.getElementById('result2').innerHTML = "Mang sau khi noi: " +arrC;
         }
 
     </script>

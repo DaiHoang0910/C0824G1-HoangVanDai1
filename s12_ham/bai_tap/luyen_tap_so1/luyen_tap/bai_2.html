@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+  <script>
+    function increaseValue(number){
+        let result = parseFloat(number) + 1;
+        return result;
+    }
+    let number = parseFloat(prompt("Enter a number"));
+    while (isNaN(number)){
+      alert("Vui long nhap lai");
+      number = prompt("Enter a number");
+    }
+      let increase = increaseValue(number);
+      alert(increase);
+  </script>
+</html>

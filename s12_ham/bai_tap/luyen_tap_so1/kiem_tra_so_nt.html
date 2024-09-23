@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+  <script>
+    function isPrime(number){
+      let isPrime = false;
+      for ( let i = 2; i <= number; i++){
+          if (isPrime %2 ===0){
+              isPrime = true;
+          }
+      }
+      return false;
+    }
+    let number1 = +prompt("Nhap so can kiem tra");
+      let prime = isPrime(number1);
+      alert(prime);
+  </script>
+</html>
