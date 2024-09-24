@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+  <script>
+    function reverse(arr){
+      let first = 0;
+      let last = arr.length - 1;
+      while (first < last){
+        let b = arr[first];
+        arr[first] = arr[last];
+        arr[last] = b;
+        first++;
+        last--;
+      }
+      document.write("Mang sau khi dao nguoc: "+arr);
+    }
+
+    let n = +prompt("Nhập số lượng phần tử: ")
+    let arr1 = []
+    while (n < 0 || n > 20 || !(parseInt(n) === n)) {
+      n = +prompt("n phải là số nguyên và trong khoảng từ 0 đến 20. Nhập lại n: ")
+    }
+    for (let i = 0; i < n; i++) {
+      arr1[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+    }
+    document.write("Mang ban dau: "+arr1+"<br>")
+    reverse(arr1);
+  </script>
+</html>

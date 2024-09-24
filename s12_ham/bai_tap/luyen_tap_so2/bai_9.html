@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function check(num, arr) {
+        let result;
+        let count = 0;
+        for (let i = 0; i < 10; i++) {
+            if (num === arr[i]) {
+                count++;
+            }
+        }
+        if (count == 0) {
+            result = "-1";
+        } else {
+            result = "So lan xuat hien: " + count;
+        }
+        return result;
+    }
+
+    let arr1 = [];
+    for (let i = 0; i < 5; i++) {
+        arr1[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+    }
+    document.write("Array: " + arr1 + "<br>");
+
+    let number = parseInt(prompt("Nhap so bat ky"));
+    while (isNaN(number)) {
+        alert("Vui long nhap lai")
+        number = parseInt(document.getElementById('number').value);
+    }
+    let checkChar = check(number, arr1);
+    document.write(checkChar);
+</script>
+</html>
