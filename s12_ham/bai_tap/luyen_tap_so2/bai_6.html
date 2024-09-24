@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+    <script>
+        function checkNatural(num){
+                if (num > 0){
+                    alert("true");
+                }else {
+                    alert("false");
+                }
+        }
+        let number = +prompt("Nhap so can kiem tra co nguyen duong hay khong");
+        while (isNaN(number) && !parseInt(number)===number){
+            alert("Vui long nhap lai");
+            number = +prompt("Nhap so can kiem tra co nguyen duong hay khong");
+        }
+        checkNatural(number);
+    </script>
+</html>
