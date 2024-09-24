@@ -7,25 +7,34 @@
 <body>
 
 </body>
-  <script>
-    function checkValue(a,b){
-      if (a > b){
-        alert("So "+a+" lon hon "+b);
-      }else {
-        alert("Tong cua 2 so: "+(a+b))
-      }
+<script>
+    function checkValue(a, b) {
+        if (a > b) {
+            alert("So " + a + " lon hon " + b);
+        } else {
+            alert("Tong cua 2 so: " + (a + b))
+        }
     }
+
     let numA = parseFloat(prompt("Nhap so a: "));
+    while (true) {
+        if (isNaN(numA)) {
+            alert("Vui long kiem tra so vua nhap");
+            numA = parseFloat(prompt("Nhap so a: "));
+        } else {
+            break;
+        }
+    }
     let numB = parseFloat(prompt("Nhap so b: "));
     while (true) {
-      if (isNaN(numA) || isNaN(numB)) {
-        alert("Vui long kiem tra so vua nhap");
-        numA = parseFloat(prompt("Nhap so a: "));
-        numB = parseFloat(prompt("Nhap so b: "));
-      }else {
-        break;
-      }
+        if (isNaN(numB)) {
+            alert("Vui long kiem tra so vua nhap");
+            numB = parseFloat(prompt("Nhap so b: "));
+        } else {
+            break;
+        }
     }
-    checkValue(numA,numB);
-  </script>
+
+    checkValue(numA, numB);
+</script>
 </html>
