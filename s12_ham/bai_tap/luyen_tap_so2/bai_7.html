@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+    <script>
+        function swap(a, b) {
+            let c = a;
+            a = b;
+            b = c;
+            return a + " " +b;
+        }
+
+        let num1 = +prompt("Nhap so dau tien: ");
+        while (isNaN(num1) || !parseInt(num1)===num1){
+            alert("Vui long nhap so va la so nguyen")
+            num1 = +prompt("Nhap so dau tien: ");
+        }
+        let num2 = +prompt("Nhap so thu hai: ");
+        while (isNaN(num2) || !parseInt(num2)===num2){
+            alert("Vui long nhap so va la so nguyen")
+            num2 = +prompt("Nhap so thu hai: ");
+        }
+        document.write("Ket qua sau khi doi so: " + num1 + " " + num2 + " la: " + swap(num1, num2));
+    </script>
+</html>
