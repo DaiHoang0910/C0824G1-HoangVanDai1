@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+    <script>
+        let Rectangle = function (width, length){
+            this.width = width;
+            this.getWidth = function (){
+                return width;
+            }
+            this.length = length;
+            this.getLength = function (){
+                return length;
+            }
+            this.getArea = function (){
+                return length * width;
+            }
+            this.getPerimeter = function (){
+                return 2*(length +  width);
+            }
+        };
+
+        let rec = Rectangle(6, 5);
+        let width = rec.getWidth();
+        let length = rec.getLength();
+        let area =rec.getArea();
+        let perimeter = rec.getPerimeter;
+        alert("Chieu dai: "+width )
+    </script>
+</html>

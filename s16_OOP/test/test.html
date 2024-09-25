@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        button {
+            background-color: green; color: white;
+            border-radius: 10%;
+        }
+
+        button:hover {
+            background-color: white; color: black;
+        }
+        tr:hover {
+            background-color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+Code: <input id="code" placeholder="Nhập mã sản phẩm">
+Name: <input id="name" placeholder="Nhập tên sản phẩm">
+Price: <input id="price" placeholder="Nhập giá sản phẩm">
+Description: <input id="description" placeholder="Nhập mô tả sản phẩm">
+Size: <input id="size" placeholder="Nhập kích cỡ sản phẩm">
+Quantity: <input id="quantity" placeholder="Nhập số lượng sản phẩm">
+<button id="btn-add">Thêm mới</button><br><br>
+Enter a name of product: <input type="text" id="find" placeholder="Nhập tên sản phẩm cần tìm"/>
+<button type="button" onclick="findProduct()">Tìm kiếm</button><br><br>
+<div id="result"></div>
+<script>
+
+    class Product {
+        code;
+        name;
+        price;
+        description;
+        size;
+        quantity;
+
+        constructor(code, name, price, description, size, quantity) {
+            this.code = code;
+            this.name = name;
+            this.price = price;
+            this.description = description;
+            this.size = size;
+            this.quantity = quantity;
+        }
+
+    }
+
+    document.getElementById("btn-add").addEventListener("click", addProduct);
+
+    let arrProduct = [];
+    let iphone16 = new Product(1, "Iphone 16 promaxxxxx", "40.000.000 VNĐ", "vip", "6.9 inch", 100);
+    arrProduct.push(iphone16);
+
+    function addProduct() {
+        let code = document.getElementById("code").value
+        let name = document.getElementById("name").value
+        let description = document.getElementById("description").value
+        let size = document.getElementById("size").value
+        let quantity = document.getElementById("quantity").value
+        let price = document.getElementById("price").value
+
+        let product = new Product(code, name, price, description, size, quantity)
+        arrProduct.push(product)
+        displayProduct(arrProduct)
+    }
+
+    function displayProduct(arr) {
+        arr.sort(function (a,b) {
+            return b.name.localeCompare(a.name)
+        })
+        let result = "<table width='1000px' border='1px'>"
+        result += "<tr>"
+        result += "<th>Code</th>"
+        result += "<th>Name</th>"
+        result += "<th>Price</th>"
+        result += "<th>Description</th>"
+        result += "<th>Size</th>"
+        result += "<th>Quantity</th>"
+        result += "<th colspan='2'>Action</th>"
+        result += "</tr>"
+        for (let i in arr) {
+            result += `<tr>`
+            result += `<td>${arr[i].code}</td>`
+            result += `<td>${arr[i].name}</td>`
+            result += `<td>${arr[i].price}</td>`
+            result += `<td>${arr[i].description}</td>`
+            result += `<td>${arr[i].size}</td>`
+            result += `<td>${arr[i].quantity}</td>`
+            result += `<td><button>Edit</button></td>`
+            result += `<td onclick="deleteProduct(${i})"><button>Delete</button></td>`
+            result += `</tr>`
+        }
+        result+="</table>"
+        document.getElementById("result").innerHTML=result
+    }
+
+    function deleteProduct(index) {
+        let isConfirm = confirm(`Bạn có thực sự muốn xóa sản phẩm ${arrProduct[index].name} hay không?`)
+        if(isConfirm) {
+            arrProduct.splice(index, 1);
+            displayProduct(arrProduct)
+        }
+    }
+
+    function findProduct(){
+        let searchName = document.getElementById('find').value;
+        let findProduct = arrProduct.filter(function (product){
+            return product.name.toLowerCase().includes(searchName)
+        });
+        displayProduct(findProduct);
+
+    }
+    displayProduct(arrProduct)
+
+</script>
+</body>
+</html>
