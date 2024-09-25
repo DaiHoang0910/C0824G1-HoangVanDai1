@@ -9,13 +9,11 @@
 </body>
   <script>
     function check(input){
-      let result;
       if (isNaN(input)){
-        result = "false"
+        return false;
       }else {
-        result = "true"
+        return true;
       }
-      return result;
     }
     let input1 = prompt("Nhap ky tu");
     document.write(check(input1));

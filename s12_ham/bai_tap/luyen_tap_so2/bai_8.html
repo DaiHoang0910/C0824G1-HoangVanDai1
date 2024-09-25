@@ -26,10 +26,14 @@
     while (n < 0 || n > 20 || !(parseInt(n) === n)) {
       n = +prompt("n phải là số nguyên và trong khoảng từ 0 đến 20. Nhập lại n: ")
     }
-    for (let i = 0; i < n; i++) {
-      arr1[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+    if(n === 0){
+        alert("Mang khong co phan tu nao")
+    }else {
+        for (let i = 0; i < n; i++) {
+            arr1[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+        }
+        document.write("Mang ban dau: " + arr1 + "<br>")
+        reverse(arr1);
     }
-    document.write("Mang ban dau: "+arr1+"<br>")
-    reverse(arr1);
   </script>
 </html>

@@ -26,7 +26,11 @@
 
     let arr1 = [];
     for (let i = 0; i < 5; i++) {
-        arr1[i] = +prompt(`Nhập phần tử thứ ${i}: `)
+        arr1[i] = +prompt(`Nhập phần tử thứ ${i}: `);
+        while (isNaN(arr1[i])){
+            alert("Vui long nhap so");
+            arr1[i] = +prompt(`Nhập phần tử thứ ${i}: `);
+        }
     }
     document.write("Array: " + arr1 + "<br>");
 

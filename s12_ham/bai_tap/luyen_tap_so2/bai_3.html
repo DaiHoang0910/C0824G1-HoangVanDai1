@@ -22,8 +22,8 @@
         return result;
     }
     let num1 = prompt("Enter a number");
-    while (isNaN(num1) || !parseInt(num1) === num1){
-      alert("So nhap vao la so nguyen");
+    while (isNaN(num1) || !parseInt(num1) === num1 || num1 < 0){
+      alert("So nhap vao la so nguyen duong");
       num1 = prompt("Enter a number");
     }
     document.write(calculateFactorial(num1));
