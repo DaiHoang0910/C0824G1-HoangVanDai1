@@ -5,7 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-
+    <button type="button" onclick="turnOn()">Bật công tắc</button>
+    <button type="button" onclick="turnOff()">Tắt công tắc</button>
 </body>
   <script>
     class ElectricLamp{
@@ -13,24 +14,24 @@
         constructor(status) {
             this.status = status;
         }
-        getStatus(){
-            return this.status;
-        }
+        // getStatus(){
+        //     return this.status;
+        // }
     }
     class SwitchButton{
-        constructor(status, lamp) {
+        constructor(lamp, status) {
             this.lamp = lamp;
             this.status = status;
         }
-        getLamp(){
-            return this.lamp;
-        }
-        setLamp(lamp){
-            this.lamp = lamp;
-        }
-        connectToLamp(ElectricLamp){
-            return this.lamp = ElectricLamp;
-        }
+        // getLamp(){
+        //     return this.lamp;
+        // }
+        // setLamp(lamp){
+        //     this.lamp = lamp;
+        // }
+        // connectToLamp(ElectricLamp){
+        //     return this.lamp = ElectricLamp;
+        // }
         switchOff(){
             this.lamp.status = false;
             return this.status = false;
@@ -40,11 +41,19 @@
             return this.status = true;
         }
     }
-    let electricLamp1 = new ElectricLamp(false);
-    let switchButton1 = new SwitchButton(electricLamp1,false);
-    console.log(switchButton1.switchOn());
-    console.log(electricLamp1.getStatus());
-    console.log(switchButton1.switchOff());
-    console.log(electricLamp1.getStatus());
+
+    function turnOn(){
+        let electricLamp1 = new ElectricLamp(true);
+        let switchButton1 = new SwitchButton(electricLamp1,true);
+        console.log(switchButton1.switchOn());
+        alert("Đèn sáng");
+    }
+
+    function turnOff(){
+        let electricLamp2 = new ElectricLamp(false)
+        let switchButton2 = new SwitchButton(electricLamp2,false)
+        console.log(switchButton2.switchOff());
+        alert("Đèn tắt");
+    }
   </script>
 </html>
