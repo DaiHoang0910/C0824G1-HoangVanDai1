@@ -12,12 +12,12 @@
         celsius;
         constructor(celsius) {
             this.celsius = celsius;
-            this.getFahrenheit = function (){
-                return (this.celsius * 9/5) + 32;
-            }
-            this.getKenvin = function (){
-                return this.celsius + 273.15;
-            }
+        }
+        getFahrenheit = function (){
+            return (this.celsius * 9/5) + 32;
+        }
+        getKenvin = function (){
+            return this.celsius + 273.15;
         }
     }
     let c = +prompt("Nhap nhiet do can chuyen doi (do C)");

@@ -19,25 +19,24 @@
         return this.length * this.width;
       };
       this.getPerimeter = function (){
-        let result = 2*( this.length +  this.width)
-        return result ;
+          return 2*( this.length +  this.width);
       };
     };
-    let width = +prompt("Nhap chieu rong");
-    while (isNaN(width) || width < 0){
-      alert("Nhap so va lon hon 0");
-      width = +prompt("Nhap chieu rong");
+    function check(index){
+        while (isNaN(index) || index <= 0){
+            index = +prompt("Nhap so va lon hon 0");
+        }
+        return index;
     }
-    let length = +prompt("Nhap chieu dai");
-    while (isNaN(length) || length < 0){
-      alert("Nhap so va lon hon 0");
-      length = +prompt("Nhap chieu dai");
+    let width = check(+prompt("Nhap chieu rong"));
+    let length = check(+prompt("Nhap chieu dai"));
+    while (width > length){
+        alert("Kiem tra lai viec nhap");
+        width = check(+prompt("Nhap chieu rong"));
+        length = check(+prompt("Nhap chieu dai"));
+
     }
-    while(width > length) {
-      alert("Chieu dai lon hon chieu rong");
-      width = +prompt("Nhap chieu rong");
-      length = +prompt("Nhap chieu dai");
-    }
+
     let rec = new Rectangle(width, length);
     let dienTich = rec.getArea();
     let chuVi = rec.getPerimeter();
