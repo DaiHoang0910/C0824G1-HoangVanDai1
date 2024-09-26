@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--  Nhập chiều dài: <input type="number" id="length"/>-->
+<!--  Nhập chiều rộng: <input type="number" id="width"/>-->
+<!--  <button type="button" onclick="area()">Tính diện tích</button>-->
+<!--  <button type="button" onclick="per()">Tính chu vi</button>-->
+<!--  <p id="result"></p>-->
+</body>
+  <script>
+    let Rectangle = function (width, length){
+      this.width = width;
+      this.length = length;
+      this.getArea = function (){
+        return this.length * this.width;
+      };
+      this.getPerimeter = function (){
+        let result = 2*( this.length +  this.width)
+        return result ;
+      };
+    };
+    let width = +prompt("Nhap chieu rong");
+    while (isNaN(width) || width < 0){
+      alert("Nhap so va lon hon 0");
+      width = +prompt("Nhap chieu rong");
+    }
+    let length = +prompt("Nhap chieu dai");
+    while (isNaN(length) || length < 0){
+      alert("Nhap so va lon hon 0");
+      length = +prompt("Nhap chieu dai");
+    }
+    while(width > length) {
+      alert("Chieu dai lon hon chieu rong");
+      width = +prompt("Nhap chieu rong");
+      length = +prompt("Nhap chieu dai");
+    }
+    let rec = new Rectangle(width, length);
+    let dienTich = rec.getArea();
+    let chuVi = rec.getPerimeter();
+    document.write("Diện tích hình chữ nhật: " + dienTich + "<br>" + "Chu vi hình chữ nhật: " + chuVi);
+  </script>
+</html>

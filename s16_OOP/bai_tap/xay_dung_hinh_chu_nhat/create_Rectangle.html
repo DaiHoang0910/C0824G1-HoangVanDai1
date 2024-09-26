@@ -10,26 +10,19 @@
     <script>
         let Rectangle = function (width, length){
             this.width = width;
-            this.getWidth = function (){
-                return width;
-            }
             this.length = length;
-            this.getLength = function (){
-                return length;
-            }
             this.getArea = function (){
-                return length * width;
-            }
+                return this.length * this.width;
+            };
             this.getPerimeter = function (){
-                return 2*(length +  width);
-            }
+                let result = 2*( this.length +  this.width)
+                return result ;
+            };
         };
 
-        let rec = Rectangle(6, 5);
-        let width = rec.getWidth();
-        let length = rec.getLength();
-        let area =rec.getArea();
-        let perimeter = rec.getPerimeter;
-        alert("Chieu dai: "+width )
+        let rec = new Rectangle(6, 5);
+        let dienTich = rec.getArea();
+        let perimeter = rec.getPerimeter();
+        document.write("Diện tích hình chữ nhật: "+ dienTich +"<br>" + "Chu vi hình chữ nhật: " + perimeter );
     </script>
 </html>
