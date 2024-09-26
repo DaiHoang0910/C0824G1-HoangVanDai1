@@ -9,10 +9,9 @@
 </body>
     <script>
         function swap(a, b) {
-            let c = a
-            a = b;
-            b = c;
-            return [a + " " +b];
+            let arr = [a,b];
+            arr.reverse();
+            return arr;
         }
 
         let num1 = +prompt("Nhap so dau tien: ");
