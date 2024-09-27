@@ -71,10 +71,10 @@
         document.write(str);
       }
       getName(){
-
+        return this.name;
       }
       setName(str){
-
+        return this.name = str;
       }
       getWeight(){
         return this.weight;
@@ -90,19 +90,31 @@
     let apple = new Apple(10);
 
     adam.say("I am Adam" + "<br>");
-    eva.say("I am Eva" + "<br>");
 
-    adam.setWeight(68);
+    let name = prompt("Nhap ten cho nhan vat 1");
+    adam.setName(name);
+    let name1 = adam.getName();
+    document.write("Tên của nhân vật 1 : " +name1 +"<br>")
+    adam.say("Tôi là "+ name1 +"<br>")
+
+    let weight0 = prompt("Nhap can nang cua " + name1)
+    adam.setWeight(weight0);
     let weight1 = adam.getWeight();
-    document.write("Cân nặng của Adam là: "+ weight1 +"<br>")
+    document.write("Cân nặng của " + name1+ " là: "+ weight1 +"<br>")
+
+    let name2 = prompt("Nhap ten cho nhan vat 2");
+    eva.setName(name2);
+    let name3 = eva.getName();
+    document.write("Tên của nhân vật 2 : " +name3 +"<br>")
+    adam.say("Tôi là "+ name3 +"<br>")
 
     while (apple.isEmpty() !== true) {
-      document.write("Adam ăn táo" + "<br>");
+      document.write(name1 + " ăn táo" + "<br>");
       adam.eatApple(apple);
 
       document.write("Quả táo còn: " + "<br>");
       document.write(apple.getWeight() + " đơn vị" + "<br>");
-      document.write("Cân nặng của Adam là: " + adam.getWeight() + " đơn vị" + "<br>");
+      document.write("Cân nặng của "  + name1 + " là: " + adam.getWeight() + " đơn vị" + "<br>");
     }
   </script>
 </html>
