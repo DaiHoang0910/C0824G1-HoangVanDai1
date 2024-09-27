@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+</body>
+  <script>
+    class Date{
+      day;
+      month;
+      year;
+      constructor(day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+      }
+      getDay(){
+        return this.day;
+      }
+      getMonth(){
+        return this.month;
+      }
+      getYear(){
+        return this.year;
+      }
+      setDay(day){
+        this.day = day;
+      }
+      setMonth(month){
+        this.month = month;
+      }
+      setYear(year){
+        this.year = year;
+      }
+    }
+    let date = new Date(2,2,2007)
+    function checkMonth(month){
+      if (isNaN(month) || month < 0 || month > 12){
+        alert("Kiem tra lai viec nhap thang");
+      }
+      return month;
+    }
+    function checkDay(day){
+      if (isNaN(day) || day < 0 || day > 30){
+        alert("Kiem tra viec nhap ngay");
+      }
+      return day;
+    }
+    function checkYear(year){
+      if (isNaN(year) || year < 0){
+        alert("Kiem tra viec nhap lai nam");
+      }
+      return year;
+    }
+      let day1 = checkDay(+prompt("Nhập ngày"));
+      let month1 = checkMonth(prompt("Nhập tháng"));
+      let year1 = checkYear(prompt("Nhập năm"));
+      date.setDay(day1);
+      date.setMonth(month1);
+      date.setYear(year1);
+      let day = checkDay(date.getDay());
+      let month = checkMonth(date.getMonth());
+      let year = checkYear(date.getYear());
+      alert(day + "/" + month + "/" + year);
+  </script>
+</html>
