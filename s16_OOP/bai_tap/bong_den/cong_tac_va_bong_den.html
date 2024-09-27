@@ -5,9 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<!--    Em nộp để xem có làm cách này được không tại thấy nó thô sơ quá-->
-    <button type="button" onclick="turnOn()">Bật công tắc</button>
-    <button type="button" onclick="turnOff()">Tắt công tắc</button>
+    <button type="button" onclick="press()">Nhấn công tắc</button>
+
 </body>
   <script>
     class ElectricLamp{
@@ -15,46 +14,42 @@
         constructor(status) {
             this.status = status;
         }
-        // getStatus(){
-        //     return this.status;
-        // }
+        turnOn(){
+            this.status = true
+            document.write("Lamp is turn on" +"<br><br>")
+        }
+        turnOff(){
+            this.status =false;
+            document.write("Lamp is turn off" +"<br><br>")
+        }
     }
     class SwitchButton{
         constructor(lamp, status) {
             this.lamp = lamp;
             this.status = status;
         }
-        // getLamp(){
-        //     return this.lamp;
-        // }
-        // setLamp(lamp){
-        //     this.lamp = lamp;
-        // }
-        // connectToLamp(ElectricLamp){
-        //     return this.lamp = ElectricLamp;
-        // }
+        connectToLamp(ElectricLamp){
+            return this.lamp = ElectricLamp;
+        }
         switchOff(){
             this.lamp.status = false;
-            return this.status = false;
+            this.lamp.turnOff();
         }
         switchOn(){
             this.lamp.status = true;
-            return this.status = true;
+            this.lamp.turnOn();
         }
     }
 
-    function turnOn(){
+    function press(){
         let electricLamp1 = new ElectricLamp(true);
         let switchButton1 = new SwitchButton(electricLamp1,true);
-        console.log(switchButton1.switchOn());
-        alert("Đèn sáng");
+        switchButton1.connectToLamp(electricLamp1);
+        for (let i = 1; i < 10; i ++){
+            switchButton1.switchOn();
+            switchButton1.switchOff();
+        }
     }
 
-    function turnOff(){
-        let electricLamp2 = new ElectricLamp(false)
-        let switchButton2 = new SwitchButton(electricLamp2,false)
-        console.log(switchButton2.switchOff());
-        alert("Đèn tắt");
-    }
   </script>
 </html>
