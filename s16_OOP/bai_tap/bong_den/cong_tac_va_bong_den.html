@@ -24,26 +24,28 @@
         }
     }
     class SwitchButton{
-        constructor(lamp, status) {
+        status;
+        lamp;
+        constructor(status, lamp) {
+            this.status = false;
             this.lamp = lamp;
-            this.status = status;
         }
         connectToLamp(ElectricLamp){
             return this.lamp = ElectricLamp;
         }
-        switchOff(){
-            this.lamp.status = false;
-            this.lamp.turnOff();
-        }
         switchOn(){
-            this.lamp.status = true;
+            this.status = true;
             this.lamp.turnOn();
+        }
+        switchOff(){
+            this.status = false;
+            this.lamp.turnOff();
         }
     }
 
     function press(){
-        let electricLamp1 = new ElectricLamp(true);
-        let switchButton1 = new SwitchButton(electricLamp1,true);
+        let electricLamp1 = new ElectricLamp(false);
+        let switchButton1 = new SwitchButton(electricLamp1);
         switchButton1.connectToLamp(electricLamp1);
         for (let i = 1; i < 10; i ++){
             switchButton1.switchOn();
