@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Tính n!! = 1*3*5*.....*n(n lẽ)-->
+<!--= 2*4*6*....*n(n chẵn)-->
+</body>
+<script>
+    let multiplication1 = 1;
+    let multiplication2 = 1;
+    let result;
+
+    let n = +prompt("Nhập số phần tử n");
+    while (isNaN(n) || n < 0 || !parseInt(n) === n) {
+        alert("Kiểm tra đầu vào");
+        n = +prompt("Nhập số phần tử n");
+    }
+    for (let i = 1; i <= n; i++) {
+        if (n % 2 === 0) {
+            if (i % 2 === 0) {
+                multiplication1 = i * multiplication1;
+                result = "n!!(n chẵn) = " +multiplication1;
+            }
+        } else {
+            if (i % 2 != 0) {
+                multiplication2 = i * multiplication2;
+                result = "n!!(n lẻ) = " +multiplication2;
+            }
+        }
+    }
+    document.write(result);
+</script>
+</html>

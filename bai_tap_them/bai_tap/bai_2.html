@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+  <script>
+    let month = +prompt("Nhập vào tháng bất kỳ");
+      while (month > 12 || month < 0 || isNaN(month) || !parseInt(month)===month){
+        alert("Vui lòng nhập lại tháng(0-12)");
+        month = parseInt(prompt("Nhập vào tháng bất kỳ"));
+      }
+    let year = +prompt("Nhập vào năm bất kỳ");
+      while (year < 0 || isNaN(year) || !parseInt(year)===year){
+        alert("Vui lòng nhập lại năm");
+        year = prompt("Nhập vào năm bất kỳ");
+      }
+    switch (month){
+      case 1:
+      case 3:
+      case 5:
+      case 7:
+      case 8:
+      case 10:
+      case 12:
+        day = ("Tháng này có 31 ngày");
+        break;
+      case 2:
+        if (year % 4==0){
+          document.write("Tháng này có 29 ngày");
+        }else {
+          day = ("Tháng này có 28 ngày");
+        }
+        break;
+      case 4:
+      case 6:
+      case 9:
+      case 11:
+        day = ("Tháng này có 30 ngày");
+        break;
+      default:
+        day = ("Không tìm thấy tháng");
+    }
+    document.write(day);
+  </script>
+</html>
