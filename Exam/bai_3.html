@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+  let n = +prompt("Nhập số lượng phần tử: ")
+  let arr = [];
+  let arr1 = [];
+  let arr2 = [];
+  let result1;
+  while (n < 0 || !(parseInt(n) === n)) {
+      n = +prompt("n phải là số nguyên va > 0. Nhập lại n: ")
+  }
+  for (let i = 0; i < n; i++) {
+    arr[i] = prompt(`Nhập phần tử thứ ${i}: `)
+      while (isNaN(arr[i]) || !parseInt(arr[i])===arr[i]){
+          alert("Vui lòng nhập số nguyên");
+          arr[i] = prompt(`Nhập phần tử thứ ${i}: `);
+      }
+  }
+  document.write("Mảng ban đầu: " + arr + "<br>")
+
+  function isPrime(number) {
+      if (number < 2) return false;
+      for (let i = 2; i <= Math.sqrt(number); i++) {
+          if (number % i === 0) {
+              return false;
+          }
+      }
+      return true;
+  }
+
+  for(let j = 0; j < arr.length; j++){
+      if (isPrime(arr[j])) {
+            arr1.push(arr[j]);
+      } else {
+            arr2.push(arr[j]);
+      }
+  }
+      arr1.sort(function (a, b) {
+          return a - b;
+      });
+      document.write("Mang sau khi sap xep tang dan: " + arr1);
+</script>
+</html>

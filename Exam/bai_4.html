@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Code: <input id="code" placeholder="Nhập mã điện thoại">
+Name: <input id="name" placeholder="Nhập tên điện thoại">
+Brand: <input id="brand" placeholder="Nhập hãng điện thoại">
+Price: <input id="price" placeholder="Nhập giá điện thoại">
+<button id="btn-add">Thêm mới</button><br><br>
+<div id="result"></div>
+</body>
+<script>
+    class Phone {
+        code;
+        name;
+        brand;
+        price;
+
+        constructor(code, name, brand, price) {
+            this.code = code;
+            this.name = name;
+            this.brand = brand;
+            this.price = price;
+        }
+
+        setCode(str) {
+            return this.code = str;
+        }
+        getCode(){
+            return this.code;
+        }
+
+        setName(str){
+            return this.name = str;
+        }
+        getName(){
+            return this.name;
+        }
+
+        setBrand(str){
+            return this.brand = str;
+        }
+        getBrand(){
+            return this.brand;
+        }
+
+        setPrice(number){
+            return this.price = number;
+        }
+        getPrice(){
+            return this.price;
+        }
+    }
+
+    let arrPhone = [];
+    let phone1 = new Phone(1, "Iphone 16", "Iphone", "40 trieu vnd");
+    let phone2 = new Phone(2, "Poco C40", "Xiao Mi", "4 trieu vnd");
+    arrPhone.push(phone1, phone2);
+
+    document.getElementById("btn-add").addEventListener("click", addPhone);
+    function addPhone() {
+        let code = document.getElementById("code").value
+        let name = document.getElementById("name").value
+        let brand = document.getElementById("brand").value
+        let price = document.getElementById("price").value
+
+        let phone = new Phone(code, name,brand, price);
+        arrPhone.push(phone);
+        displayPhone(arrPhone);
+    }
+
+    function displayPhone(arr){
+        arr.sort(function (a,b) {
+            return b.name.localeCompare(a.name)
+        })
+        let result = "<table width='1000px' border='1px'>"
+        result += "<tr>"
+        result += "<th>Code</th>"
+        result += "<th>Name</th>"
+        result += "<th>Brand</th>"
+        result += "<th>Price</th>"
+        result += "</tr>"
+        for (let i in arr) {
+            result += `<tr>`
+            result += `<td>${arr[i].code}</td>`
+            result += `<td>${arr[i].name}</td>`
+            result += `<td>${arr[i].brand}</td>`
+            result += `<td>${arr[i].price}</td>`
+            result += `</tr>`
+        }
+        result+="</table>"
+        document.getElementById("result").innerHTML=result
+    }
+
+    displayPhone(arrPhone);
+</script>
+</html>

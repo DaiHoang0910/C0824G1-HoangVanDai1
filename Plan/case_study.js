@@ -59,6 +59,14 @@ class Car {
         return this.address;
     }
 
+    setDescription(str6) {
+        return this.description = str6;
+    }
+
+    getDescription() {
+        return this.description;
+    }
+
 }
 
 let arrCar = [];
@@ -98,10 +106,10 @@ let car5 = new Car(6, "Porsche 911 GT3 RS", "500.000 USD", "", "ẩn danh ngư�
     "            Động cơ boxer 6 xi-lanh 4 lít hút khí tự nhiên, công suất 518 mã lực.\n" +
     "            Do nhiều người săn đón, khiến số lượng xe sản xuất không đủ, nhiều khách hàng trên thế giới phải chờ một\n" +
     "            năm.");
-let car6 = new Car(7, "Jaguar F-Type SVR", "127.000 USD", " 2016-2020", "", "England", "<img src='Jaguar%20F-Type%20SVR.webp' style='width: 100%'>", "Jaguar F-Type SVR được trang bị động cơ V8, siêu nạp, dung tích 5.0 lít, sản sinh công suất tối đa 575 mã lực và mô-men xoắn cực đại 700 Nm. " +
+let car6 = new Car(7, "Jaguar F-Type SVR", "127.000 USD", " 2016-2020", "đại gia người Anh", "England", "<img src='Jaguar%20F-Type%20SVR.webp' style='width: 100%'>", "Jaguar F-Type SVR được trang bị động cơ V8, siêu nạp, dung tích 5.0 lít, sản sinh công suất tối đa 575 mã lực và mô-men xoắn cực đại 700 Nm. " +
                 "Sức mạnh được truyền tới bánh thông qua hộp số tự động 8 cấp và hệ dẫn động 4 bánh. " +
                 "Nhờ đó, Jaguar F-Type SVR có thể tăng tốc từ vị trí xuất phát lên 96 km/h trong 3,7 giây trước khi đạt vận tốc tối đa 323 km/h.");
-let car7 = new Car(8, "Aston Martin DB12", "300.000 USD", "2023", "", "England", "<img src='Aston%20Martin%20DB12.webp' style='width: 100%;'>", "DB12 trang bị động cơ 4.0 V8 tăng áp kép, công suất 671 mã lực, mô-men xoắn cực đại 800 Nm. " +
+let car7 = new Car(8, "Aston Martin DB12", "300.000 USD", "2023", "công ty tư nhân tại Anh", "England", "<img src='Aston%20Martin%20DB12.webp' style='width: 100%;'>", "DB12 trang bị động cơ 4.0 V8 tăng áp kép, công suất 671 mã lực, mô-men xoắn cực đại 800 Nm. " +
                 "Mạnh hơn so với công suất của động cơ V8 trên DB11 chỉ 528 mã lực và mô-men xoắn 675 Nm, và mạnh hơn cả động cơ 5.2 V12 tăng áp kép, công suất 630 mã lực, mô-men xoắn 700 Nm.\n" +
                 "\n" +
                 "Aston Martin DB12 có khả năng tăng tốc từ 0-100 km/h trong 3.6 giây và đạt tốc độ tối đa 325 km/h nhờ sở hữu động cơ V8 Twin-Turbo, dung tích 4.0L, sản sinh công suất 680 mã lực, mô-men xoắn 800Nm cùng hộp số tự động 8 cấp.")
@@ -144,19 +152,19 @@ function editCar(index) {
     let edit = prompt("Nhập thông tin muốn sửa");
     switch (edit) {
         case "tên" :
-            let str1 = prompt("Nhập tên xe cần thay thế");
+            let str1 = prompt("Nhập tên xe thay thế");
             arrCar[index].setName(str1);
             let name1 = arrCar[index].getName();
             arrCar[index].name = name1;
             break;
         case "giá trị" :
-            let str2 = prompt("Nhập giá cần thay thế");
+            let str2 = prompt("Nhập giá thay thế");
             arrCar[index].setPrice(str2);
             let price1 = arrCar[index].getPrice();
             arrCar[index].price = price1;
             break;
         case "thời gian sản xuất":
-            let str3 = prompt("Nhập thời gian cần thay thế ");
+            let str3 = prompt("Nhập thời gian thay thế ");
             arrCar[index].setTime(str3);
             let time1 = arrCar[index].getTime();
             arrCar[index].time = time1;
@@ -168,10 +176,16 @@ function editCar(index) {
             arrCar[index].ownership = owner1;
             break;
         case "khu vực" :
-            let str5 = prompt("Nhập địa chỉ cần thay thế");
+            let str5 = prompt("Nhập địa chỉ thay thế");
             arrCar[index].setAddress(str5);
             let address1 = arrCar[index].getAddress();
             arrCar[index].address = address1;
+            break;
+        case "thông tin" :
+            let str6 = prompt("Nhập thông tin thay thế");
+            arrCar[index].setDescription(str6);
+            let des1 = arrCar[index].getDescription();
+            arrCar[index].description = des1;
             break;
         default:
             alert("Không có thông tin nào cần chỉnh sửa");
@@ -182,7 +196,7 @@ function editCar(index) {
 function findCar() {
     let searchName = document.getElementById('find').value;
     let findCar = arrCar.filter(function (car) {
-        return car.name.toLowerCase().includes(searchName)
+        return car.name.includes(searchName)
     });
     displayCar(findCar);
 }

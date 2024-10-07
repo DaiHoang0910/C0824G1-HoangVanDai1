@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    let sum1 = 0;
+    let sum2 = 0;
+    let result;
+    let n = +prompt("Nhập số lượng phần tử: ")
+    let arr = []
+    while (n < 0 || n > 20 || !(parseInt(n) === n)) {
+        n = +prompt("n phải là số nguyên và trong khoảng từ 0 đến 20. Nhập lại n: ")
+    }
+    for (let i = 0; i < n; i++) {
+        arr[i] = prompt(`Nhập phần tử thứ ${i}: `);
+        while (isNaN(arr[i]) || !parseInt(arr[i]) === arr[i]) {
+            alert("Vui lòng nhập số nguyên");
+            arr[i] = prompt(`Nhập phần tử thứ ${i}: `);
+        }
+    }
+    document.write("Danh sách phần tử của mảng: " + arr + "<br>");
+
+
+    for (let j = 0; j < arr.length; j++) {
+        let num = parseInt(arr[j]);
+        if (num % 2 == 0) {
+            sum1 = sum1 + num;
+        } else {
+            sum2 = sum2 + num;
+        }
+        result = (sum1) - (sum2);
+    }
+    document.write("Hiệu số của Tổng các số chẵn và Tổng các số lẻ: " + result);
+</script>
+</html>
